@@ -105,6 +105,7 @@ const WEDDING_CONFIG = {
   // 8. CẤU HÌNH LƯU XÁC NHẬN THAM DỰ (RSVP -> GOOGLE SHEETS)
   // Dán link Web App (Google Apps Script) vào đây để tự động ghi danh sách khách vào Google Sheet
   rsvp: {
-    googleSheetScriptUrl: ''
+    googleSheetScriptUrl: 'https://script.google.com/macros/s/AKfycbxXWSlf_0ODsiOYpZ0nmd85YXBNxkEX9zmz_YGnmfEPyIaPbTgfHpK4H0NGwvyFnvJm/exec'
   }
 };
+  
