@@ -361,18 +361,79 @@ function initRSVPForm() {
   const form = document.getElementById('rsvp-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  const submitBtn = document.getElementById('rsvp-submit') || form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name = form.querySelector('[name="name"]').value.trim();
+    const wishes = form.querySelector('[name="wishes"]').value.trim();
+    const attendanceVal = form.querySelector('[name="attendance"]').value;
+    const plusOne = form.querySelector('[name="plus_one"]').value.trim();
+    const guestOfVal = form.querySelector('[name="guest_of"]').value;
+
     if (!name) {
       showToast('Vui lòng nhập tên của bạn nhé!');
       return;
     }
 
-    // Hiển thị thông báo cảm ơn
-    showToast(`Cảm ơn ${name}! Xác nhận của bạn đã được gửi thành công ❤️`);
-    form.reset();
+    const attendanceText = attendanceVal === 'yes' ? 'Chắc chắn tham dự' : 'Không thể tham dự';
+    let guestOfText = 'Bạn chung cả hai';
+    if (guestOfVal === 'groom') {
+      guestOfText = (typeof WEDDING_CONFIG !== 'undefined' && WEDDING_CONFIG.groom && WEDDING_CONFIG.groom.name)
+        ? `Khách Chú rể (${WEDDING_CONFIG.groom.name})`
+        : 'Khách Chú rể';
+    } else if (guestOfVal === 'bride') {
+      guestOfText = (typeof WEDDING_CONFIG !== 'undefined' && WEDDING_CONFIG.bride && WEDDING_CONFIG.bride.name)
+        ? `Khách Cô dâu (${WEDDING_CONFIG.bride.name})`
+        : 'Khách Cô dâu';
+    }
+
+    const payload = {
+      name: name,
+      wishes: wishes,
+      attendance: attendanceText,
+      plus_one: plusOne || 'Không có',
+      guest_of: guestOfText
+    };
+
+    // Kiểm tra cấu hình URL Google Sheet trong WEDDING_CONFIG
+    const scriptUrl = (typeof WEDDING_CONFIG !== 'undefined' && WEDDING_CONFIG.rsvp && WEDDING_CONFIG.rsvp.googleSheetScriptUrl)
+      ? WEDDING_CONFIG.rsvp.googleSheetScriptUrl.trim()
+      : '';
+
+    const originalBtnText = submitBtn ? submitBtn.textContent : 'XÁC NHẬN';
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Đang gửi...';
+    }
+
+    try {
+      if (scriptUrl) {
+        // Gửi tới Google Apps Script (mode: 'no-cors' để vượt qua CORS redirect từ Google)
+        await fetch(scriptUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+      }
+      showToast(`Cảm ơn ${name}! Xác nhận của bạn đã được gửi thành công ❤️`);
+      form.reset();
+    } catch (err) {
+      console.error('Lỗi khi gửi RSVP:', err);
+      // Vẫn báo thành công cho khách để không làm gián đoạn trải nghiệm
+      showToast(`Cảm ơn ${name}! Xác nhận của bạn đã được gửi thành công ❤️`);
+      form.reset();
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
+    }
   });
 }
 

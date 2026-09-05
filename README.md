@@ -64,7 +64,29 @@ Toàn bộ nội dung hiển thị trên website được **đồng bộ tự đ
 
 ---
 
-## 🚀 4. Hướng Dẫn Host Lên GitHub Pages (Miễn Phí 100%)
+## 📊 4. Hướng Dẫn Kết Nối Google Sheets Để Nhận Xác Nhận Tham Dự (RSVP)
+
+Khi khách mời điền thông tin và bấm **"XÁC NHẬN"**, dữ liệu (Tên, Lời chúc, Tham dự, Người đi cùng, Khách của ai, Thời gian) sẽ tự động được ghi vào Google Sheet của bạn theo thời gian thực (Hoàn toàn miễn phí qua Google Apps Script):
+
+1. Mở [Google Sheets](https://sheets.new) để tạo 1 trang tính mới (đặt tên ví dụ: `Khách Mời Đám Cưới`).
+2. Trên thanh menu chọn: **Tiện ích mở rộng** (Extensions) -> **Apps Script**.
+3. Mở file [google_sheet_script.js](google_sheet_script.js) trong dự án này, copy toàn bộ mã và dán đè vào cửa sổ Apps Script.
+4. Bấm nút **Lưu** (Ctrl + S), sau đó bấm nút **Triển khai** (Deploy) ở góc trên bên phải -> Chọn **Tùy chọn triển khai mới** (New deployment).
+5. Bấm icon bánh răng -> Chọn **Ứng dụng web** (Web app):
+   - **Thực thi dưới dạng**: `Tôi (email của bạn)`
+   - **Ai có quyền truy cập**: `Bất kỳ ai (Anyone)` *(Bắt buộc chọn Anyone)*
+6. Bấm **Triển khai** (Deploy) -> Cấp quyền cho ứng dụng.
+7. Sao chép **URL của ứng dụng web** (Web app URL có đuôi `/exec`) và dán vào file [js/config.js](js/config.js):
+   ```javascript
+   rsvp: {
+     googleSheetScriptUrl: 'https://script.google.com/macros/s/.../exec'
+   }
+   ```
+8. Xong! Bất kỳ khi nào khách bấm gửi xác nhận trên web, 1 dòng mới sẽ tự động nhảy vào Google Sheet ngay lập tức!
+
+---
+
+## 🚀 5. Hướng Dẫn Host Lên GitHub Pages (Miễn Phí 100%)
 
 Trang web chỉ gồm các file tĩnh thuần HTML/CSS/JS nên có thể đưa lên GitHub Pages cực kỳ dễ dàng:
 

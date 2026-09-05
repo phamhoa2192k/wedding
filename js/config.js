@@ -100,5 +100,11 @@ const WEDDING_CONFIG = {
       accountName: 'BUI THI KHANH HUYEN',
       qrImage: 'https://api.vietqr.io/image/970436-1234567890-compact2.png?amount=0&addInfo=Mung%20cuoi%20Khanh%20Huyen&accountName=BUI%20THI%20KHANH%20HUYEN'
     }
+  },
+
+  // 8. CẤU HÌNH LƯU XÁC NHẬN THAM DỰ (RSVP -> GOOGLE SHEETS)
+  // Dán link Web App (Google Apps Script) vào đây để tự động ghi danh sách khách vào Google Sheet
+  rsvp: {
+    googleSheetScriptUrl: ''
   }
 };
