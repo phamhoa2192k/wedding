@@ -1,0 +1,2093 @@
+/* ==========================================================================
+   WEDDING INVITATION - STYLESHEET (Mobile First, GitHub Pages Ready)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playball&display=swap');
+
+/* --- Reset & Global --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ==========================================================================
+   PHOTO CONTAINER & ASPECT RATIO LOCKS (CỐ ĐỊNH KÍCH THƯỚC MỌI KHUNG ẢNH)
+   Đảm bảo tất cả các ảnh khi thay thế bởi ảnh thật của người dùng (bất kể ngang,
+   dọc, vuông, độ phân giải khác nhau) đều tự động lấp đầy khung hoàn hảo (cover),
+   không bao giờ bị méo mó (distort/stretch), không vỡ layout và giữ nét tối đa.
+   ========================================================================== */
+.hero-card,
+.save-date-item,
+.couple-photo-box,
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.05); /* Placeholder màu nền trong khi chờ ảnh tải */
+}
+
+.hero-card-img,
+.save-date-item img,
+.couple-photo-box img,
+.gallery-item img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Riêng ảnh chân dung Chú rể & Cô dâu: Ưu tiên căn giữa trên (center 20%) 
+   để khuôn mặt cô dâu chú rể luôn nằm trọn trong khung hình, không bị cắt mất phần đầu */
+.couple-photo-box img {
+  object-position: center 20% !important;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Background ornament ambient on desktop */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Container (Mobile-first Frame) --- */
+.wedding-app {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-card), 0 0 60px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-bottom: 60px;
+}
+
+/* --- Typography Helpers --- */
+.font-script {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-weight: 400;
+  color: var(--text-script);
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* --- Torn Paper Effect --- */
+.torn-paper {
+  position: relative;
+  background-color: #fbf9f4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.torn-paper::before,
+.torn-paper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background-repeat: repeat-x;
+  background-size: 28px 14px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.torn-paper::before {
+  top: -12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 14'%3E%3Cpath fill='%23fbf9f4' d='M0 14 L0 4 Q4 10 7 6 T14 8 Q18 3 21 7 T28 4 L28 14 Z'/%3E%3C/svg%3E");
+}
+
+.torn-paper::after {
+  bottom: -12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 14'%3E%3Cpath fill='%23fbf9f4' d='M0 0 L0 10 Q4 4 7 8 T14 6 Q18 11 21 7 T28 10 L28 0 Z'/%3E%3C/svg%3E");
+}
+
+/* --- Song Hỷ Badge (Double Happiness 囍) --- */
+.song-hy-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--song-hy-badge);
+  border: 2px solid #e5c07b;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  position: relative;
+}
+
+.song-hy-badge svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+.song-hy-badge.small {
+  width: 38px;
+  height: 38px;
+}
+.song-hy-badge.small svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==========================================================================
+   SECTION 1: HERO (Cover Image, Song Hy, Couple Names, Date Diamond)
+   ========================================================================== */
+.section-hero {
+  position: relative;
+  padding: 16px 16px 20px;
+  background-color: var(--bg-card);
+}
+
+.hero-card {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.hero-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.05) 40%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-border-inset {
+  position: absolute;
+  inset: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Hero Badge & Names Block */
+.hero-content-top {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.hero-names-pill {
+  background: var(--bg-hero-pill);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 22px 18px;
+  border-radius: 24px;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  min-width: 105px;
+}
+
+.hero-names-pill .name {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 1.85rem;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-names-pill .bullet {
+  font-size: 1.2rem;
+  line-height: 1;
+  opacity: 0.8;
+  margin: 6px 0;
+  display: block;
+}
+
+/* Diamond Date Badges (05 / 10 / 26) */
+.hero-date-diamonds {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.diamond-badge {
+  width: 36px;
+  height: 36px;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  transform: rotate(45deg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diamond-badge:hover {
+  transform: rotate(45deg) scale(1.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.diamond-badge span {
+  transform: rotate(-45deg);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   SECTION 2: COUNTDOWN ("Our wedding day")
+   ========================================================================== */
+.section-countdown {
+  padding: 30px 20px 36px;
+  margin: 10px 16px 20px;
+}
+
+.countdown-wrapper {
+  text-align: center;
+}
+
+.countdown-title {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+  color: var(--text-script);
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.timer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 58px;
+}
+
+.timer-number {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: var(--text-heading);
+  line-height: 1;
+}
+
+.timer-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+.timer-separator {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text-heading);
+  line-height: 1;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   SECTION 3: SAVE THE DATE (Asymmetric photo grid & dark theme card)
+   ========================================================================== */
+.section-save-date {
+  padding: 0 16px 24px;
+}
+
+.save-date-card {
+  position: relative;
+  border-radius: 28px;
+  padding: 24px 18px 28px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  color: #ffffff;
+  background-color: var(--bg-card-alt);
+  background-image: 
+    linear-gradient(
+      140deg,
+      rgba(15, 25, 18, 0.72) 0%,
+      rgba(15, 25, 18, 0.48) 45%,
+      rgba(15, 25, 18, 0.75) 100%
+    ),
+    url('../assets/images/save_date_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.save-date-header {
+  margin-bottom: 20px;
+}
+
+.save-date-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.std-word {
+  display: block;
+  color: #ffffff;
+  line-height: 1.05;
+}
+
+/* Chữ Save: Font thư pháp/script, góc trên bên trái */
+.word-save {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 3.4rem;
+  font-weight: 300;
+  margin-left: 0;
+}
+
+/* Chữ The: Font sans-serif khác biệt, lệch chéo vào giữa */
+.word-the {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.95);
+  margin-left: 40px;
+  margin-top: -6px;
+  margin-bottom: -6px;
+}
+
+/* Chữ Date: Font thư pháp/script cùng font với Save, lệch chéo sâu hơn xuống dưới phải */
+.word-date {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 3.4rem;
+  margin-left: 76px;
+  font-weight: 300;
+}
+
+.save-date-badge {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+  margin-left: 76px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: fit-content;
+  user-select: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.save-date-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.cal-inner {
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 10px;
+  padding: 3px 6px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 2px;
+}
+
+.cal-day,
+.cal-month {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.05;
+  color: #ffffff;
+  min-width: 25px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.cal-sep-v {
+  width: 1px;
+  height: 17px;
+  background-color: rgba(255, 255, 255, 0.45);
+  margin: 0 4px;
+}
+
+.cal-sep-h {
+  width: calc(100% + 12px);
+  margin-left: -6px;
+  margin-right: -6px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.cal-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 2px;
+}
+
+.cal-year {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  color: #ffffff;
+  text-align: center;
+  padding-left: 2px;
+}
+
+.save-date-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.save-date-item {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.save-date-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.save-date-item:hover img {
+  transform: scale(1.03);
+}
+
+.save-date-item.tall {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  height: 330px;
+}
+
+.save-date-item.sq1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  height: 158px;
+}
+
+.save-date-item.sq2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  height: 158px;
+}
+
+/* Floral motif divider */
+.floral-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0 8px;
+  opacity: 0.35;
+}
+
+.floral-divider svg {
+  width: 110px;
+  height: auto;
+  stroke: var(--primary-color);
+  fill: none;
+}
+
+/* ==========================================================================
+   SECTION 4: INVITATION CARD (Tờ giấy nổi trên nền hoa Magnolia)
+   ========================================================================== */
+.section-invitation {
+  position: relative;
+  padding: 38px 16px 44px;
+  overflow: hidden;
+}
+
+/* Nền hoa Magnolia nằm ở lớp dưới (Background Layer) */
+.invitation-magnolia-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.magnolia-flower {
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.65;
+  filter: contrast(1.15);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.flower-top-left {
+  top: -5px;
+  left: -28px;
+  width: 250px;
+  max-width: none;
+  transform: rotate(-10deg);
+}
+
+.flower-bottom-right {
+  bottom: -5px;
+  right: -32px;
+  width: 270px;
+  max-width: none;
+  transform: rotate(172deg) scaleX(-1);
+}
+
+/* Tờ giấy thư mời nổi ở phía trên (Floating Paper Sheet) */
+.invitation-paper-sheet {
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff;
+  padding: 42px 22px 36px;
+  text-align: center;
+  border-radius: 4px;
+  /* Đổ bóng 3D phân tầng tạo cảm giác tờ giấy nổi hẳn trên nền hoa */
+  box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.04),
+    0 12px 26px -2px rgba(0, 0, 0, 0.12),
+    0 22px 45px -4px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Viền giấy xé đồng màu trắng cho tờ giấy nổi */
+.invitation-paper-sheet.torn-paper {
+  background-color: #ffffff;
+}
+
+.invitation-paper-sheet.torn-paper::before {
+  top: -12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 14'%3E%3Cpath fill='%23ffffff' d='M0 14 L0 4 Q4 10 7 6 T14 8 Q18 3 21 7 T28 4 L28 14 Z'/%3E%3C/svg%3E");
+}
+
+.invitation-paper-sheet.torn-paper::after {
+  bottom: -12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 14'%3E%3Cpath fill='%23ffffff' d='M0 0 L0 10 Q4 4 7 8 T14 6 Q18 11 21 7 T28 10 L28 0 Z'/%3E%3C/svg%3E");
+}
+
+.invitation-intro {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.venue-name {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.venue-address {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.invitation-datetime {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.btn-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-heading);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--primary-subtle);
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.btn-map:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-map svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--accent-color);
+}
+
+.invitation-salute {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 2.1rem;
+  color: var(--text-script);
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   SECTION 5: COUPLE INFO ("Wedding of" - 2 Div riêng biệt, bên trái cao hơn)
+   ========================================================================== */
+.section-couple {
+  padding: 10px 16px 32px;
+  position: relative;
+}
+
+.couple-columns-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  position: relative;
+  align-items: start;
+}
+
+/* Div Chú rể (bên trái): Nằm cao */
+.col-groom {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+/* Div Cô dâu (bên phải): Chênh nhẹ nhàng, mép trên chữ Wedding of ngang tầm mép ảnh chú rể */
+.col-bride {
+  display: flex;
+  flex-direction: column;
+  margin-top: -6px; /* Giảm độ chênh lệch cao thấp, tạo độ so le nhẹ nhàng tự nhiên */
+}
+
+.couple-heading {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: var(--text-script);
+  text-align: right;
+  margin-bottom: 4px;
+  line-height: 1;
+  padding-right: 4px;
+}
+
+/* Khung chứa ảnh */
+.couple-photo-box {
+  width: 100%;
+  height: 250px;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.couple-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.couple-photo-box:hover img {
+  transform: scale(1.04);
+}
+
+/* Phần thông tin tên & cha mẹ */
+.couple-info-block {
+  margin-top: 14px;
+}
+
+.groom-side {
+  text-align: left;
+}
+
+.bride-side {
+  text-align: right;
+}
+
+.couple-person-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-heading);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+
+/* Cột cây gia đình (nhánh cha mẹ) kèm đường chỉ viền và chấm tròn (pin) */
+.family-pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.groom-pillar {
+  justify-content: flex-start;
+}
+
+.bride-pillar {
+  justify-content: flex-end;
+}
+
+.pillar-line-pin {
+  width: 1.5px;
+  min-height: 52px;
+  background-color: var(--primary-color);
+  position: relative;
+  margin-top: 3px;
+  opacity: 0.85;
+}
+
+.pillar-line-pin::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.pillar-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.family-side-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-heading);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.parent-name-line {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+/* Dấu nối & to nằm thấp xuống dưới cả 2 bức ảnh */
+.couple-center-ampersand {
+  position: absolute;
+  top: 280px; /* Thấp ngay dưới đáy cả 2 bức ảnh, nằm vừa vặn giữa 2 phần thông tin */
+  left: 45%;
+  transform: translate(-50%, 0);
+  font-size: 3.8rem;
+  color: var(--text-muted);
+  opacity: 0.38;
+  pointer-events: none;
+  z-index: 2;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   SECTION 6: TIMELINE
+   ========================================================================== */
+.section-timeline {
+  margin: 16px 16px 28px;
+  padding: 36px 16px 36px;
+  text-align: center;
+}
+
+.timeline-heading {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: var(--text-script);
+  margin-bottom: 28px;
+}
+
+.timeline-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  position: relative;
+}
+
+.timeline-items::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: var(--border-color);
+  z-index: 0;
+}
+
+.timeline-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--accent-color);
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.timeline-time {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   SECTION 7: DRESSCODE
+   ========================================================================== */
+.section-dresscode {
+  margin: 0 16px 28px;
+  padding: 30px 20px 32px;
+  text-align: center;
+}
+
+.dresscode-heading {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: var(--text-script);
+  text-align: right;
+  margin-bottom: 20px;
+  padding-right: 10px;
+}
+
+.dresscode-palette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.color-swatch {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.color-swatch:hover {
+  transform: translateY(-4px);
+}
+
+.swatch-1 { background-color: var(--dresscode-1); border: 1.5px solid #dcd7ca; }
+.swatch-2 { background-color: var(--dresscode-2); }
+.swatch-3 { background-color: var(--dresscode-3); }
+.swatch-4 { background-color: var(--dresscode-4); }
+.swatch-5 { background-color: var(--dresscode-5); }
+
+/* ==========================================================================
+   SECTION 8: ALBUM ("Our Memories")
+   ========================================================================== */
+.section-gallery {
+  padding: 16px 16px 28px;
+}
+
+.gallery-paper-card {
+  padding: 32px 18px 24px;
+}
+
+.gallery-heading {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 2.9rem;
+  color: var(--text-script);
+  margin-bottom: 12px;
+}
+
+.gallery-quote {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* Huy hiệu Song Hỷ floating ở góc trên bên phải của ảnh 1 */
+.gallery-floating-songhy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+}
+
+/* Cột 2: Chứa chữ Forever ở trên và ảnh 2 nằm thấp xuống dưới */
+.g-col-forever {
+  grid-column: 5 / 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 250px;
+}
+
+.g-col-forever .gallery-tag-text {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: var(--text-script);
+  line-height: 1;
+  text-align: right;
+  margin-bottom: 6px;
+  padding-right: 2px;
+}
+
+.g-col-forever .g-item-2 {
+  flex: 1;
+  height: calc(100% - 46px);
+  min-height: 195px;
+  width: 100%;
+}
+
+/* Gallery Masonry / Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Layout matching template 3.jpg */
+.g-item-1 {
+  grid-column: 1 / 5;
+  height: 250px;
+  position: relative;
+}
+.g-item-3 {
+  grid-column: 1 / 3;
+  height: 150px;
+}
+.g-item-4 {
+  grid-column: 3 / 5;
+  height: 150px;
+}
+.g-item-5 {
+  grid-column: 5 / 7;
+  height: 150px;
+}
+.g-item-6 {
+  grid-column: 1 / 7;
+  height: 170px;
+}
+.g-item-7 {
+  grid-column: 1 / 3;
+  height: 190px;
+}
+.g-item-8 {
+  grid-column: 3 / 7;
+  height: 190px;
+}
+
+/* ==========================================================================
+   SECTION 9: RSVP FORM
+   ========================================================================== */
+.section-rsvp {
+  margin: 16px 16px 36px;
+  padding: 32px 20px 36px;
+}
+
+.rsvp-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 20px;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 999px;
+  background-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px var(--primary-subtle);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+textarea.form-control {
+  border-radius: 20px;
+  min-height: 90px;
+  resize: vertical;
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234a5a35'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 20px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  margin-top: 6px;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   SECTION 10: GIFT / BANK MODAL (Mừng cưới QR)
+   ========================================================================== */
+.section-gift {
+  text-align: center;
+  padding: 0 16px 20px;
+}
+
+.btn-gift {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border: 1.5px solid var(--accent-color);
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.btn-gift:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+.btn-gift svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   FLOATING WIDGETS (Music Player & Theme Switcher)
+   ========================================================================== */
+/* Music Player Floating Button */
+.floating-music-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-music-btn:hover {
+  transform: scale(1.08);
+}
+
+.floating-music-btn.playing svg {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Theme Switcher Widget */
+.floating-theme-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+}
+
+.theme-toggle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--text-main);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.08);
+}
+
+.theme-palette-popup {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  width: 190px;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+.theme-palette-popup.active {
+  display: flex;
+}
+
+.theme-popup-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.theme-opt-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.theme-opt-btn:hover,
+.theme-opt-btn.active {
+  transform: scale(1.2);
+  border-color: #333333;
+}
+
+.theme-opt-green { background: #4a5a35; }
+.theme-opt-gold  { background: #92753a; }
+.theme-opt-red   { background: #8c262a; }
+.theme-opt-pink  { background: #9c5965; }
+.theme-opt-navy  { background: #27415e; }
+
+.theme-hint {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   MODALS (Lightbox & Gift QR)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 400px;
+  width: 100%;
+  padding: 24px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  cursor: zoom-out;
+  padding: 16px;
+}
+
+.lightbox-modal .modal-content {
+  background: transparent;
+  box-shadow: none;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  pointer-events: none;
+}
+
+.lightbox-modal img {
+  pointer-events: auto;
+  max-width: 90vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+  cursor: default;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #ffffff;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Success notification toast */
+.toast-notice {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background: var(--primary-color);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  pointer-events: none;
+}
+
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================================
+   LANDING PAGE SCROLL ANIMATIONS (IntersectionObserver Reveal)
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition-property: opacity, transform;
+  transition-duration: 0.85s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up {
+  transform: translateY(45px);
+}
+
+.reveal-down {
+  transform: translateY(-35px);
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal-scale {
+  transform: scale(0.88);
+}
+
+.reveal-pop {
+  transform: scale(0.7) translateY(20px);
+}
+
+/* Khi phần tử cuộn vào tầm nhìn (active) */
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Stagger Delays để tạo hiệu ứng nối tiếp mượt mà */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+.delay-7 { transition-delay: 0.7s; }
+.delay-8 { transition-delay: 0.8s; }
+
+/* Hiệu ứng ban đầu của phần Hero khi vừa tải trang */
+.hero-card {
+  animation: heroCardIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-names-pill {
+  animation: floatDownIn 1s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.song-hy-badge {
+  animation: popBadgeIn 0.9s 0.1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.hero-date-diamonds .diamond-badge:nth-child(1) {
+  animation: popDiamondIn 0.8s 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.hero-date-diamonds .diamond-badge:nth-child(2) {
+  animation: popDiamondIn 0.8s 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.hero-date-diamonds .diamond-badge:nth-child(3) {
+  animation: popDiamondIn 0.8s 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Keyframe animations */
+@keyframes heroCardIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes floatDownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popBadgeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Giữ nguyên góc xoay 45deg cho hình quả trám trong suốt quá trình animate */
+@keyframes popDiamondIn {
+  from {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+/* Hiệu ứng rung nhẹ / nhịp đập tinh tế cho nút Chỉ đường */
+.btn-map {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-map::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 80%
+  );
+  transform: rotate(30deg) translateX(-100%);
+  animation: shimmer 4s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+  0% { transform: rotate(30deg) translateX(-150%); }
+  40%, 100% { transform: rotate(30deg) translateX(150%); }
+}
+
+/* Hiệu ứng nhịp đập nhẹ nhàng cho huy hiệu Song Hỷ */
+.song-hy-badge {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.song-hy-badge:hover {
+  transform: scale(1.1) rotate(4deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   DESKTOP & TABLET RESPONSIVE ENHANCEMENTS
+   Hiển thị khung to hơn, typography rõ nét và bố cục sang trọng trên máy tính
+   ========================================================================== */
+
+/* 1. Màn hình Tablet & Laptop nhỏ (>= 768px) */
+@media (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+
+  body {
+    padding: 20px 0;
+  }
+
+  .wedding-app {
+    max-width: 620px;
+    margin: 20px auto;
+    border-radius: 36px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 90px rgba(0, 0, 0, 0.08);
+  }
+
+  .hero-card {
+    height: 620px;
+    border-radius: 32px;
+  }
+
+  .hero-names-pill {
+    min-width: 130px;
+    padding: 26px 20px;
+  }
+
+  .hero-names-pill .name {
+    font-size: 2.1rem;
+  }
+
+  .save-date-card {
+    border-radius: 32px;
+    padding: 30px 24px 34px;
+  }
+
+  .save-date-item.tall {
+    height: 410px;
+  }
+  .save-date-item.sq1,
+  .save-date-item.sq2 {
+    height: 198px;
+  }
+
+  .couple-photo-box {
+    height: 320px;
+    border-radius: 28px;
+  }
+
+  .col-bride {
+    margin-top: -8px;
+  }
+
+  .couple-center-ampersand {
+    top: 360px;
+  }
+
+  .timeline-icon-wrap {
+    width: 48px;
+    height: 48px;
+  }
+
+  .color-swatch {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+  }
+
+  .g-item-1, .g-col-forever { height: 280px; }
+  .g-col-forever .g-item-2 { height: calc(100% - 50px); min-height: 220px; }
+  .g-item-3, .g-item-4, .g-item-5 { height: 180px; }
+  .g-item-6 { height: 200px; }
+  .g-item-7, .g-item-8 { height: 230px; }
+}
+
+/* 2. Màn hình Desktop Tiêu Chuẩn (>= 1024px) */
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    padding: 30px 0 50px;
+  }
+
+  .wedding-app {
+    max-width: 720px;
+    margin: 30px auto;
+    border-radius: 42px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18), 0 0 120px rgba(0, 0, 0, 0.1);
+  }
+
+  .section-hero {
+    padding: 24px 24px 24px;
+  }
+
+  .hero-card {
+    height: 700px;
+    border-radius: 36px;
+  }
+
+  .hero-border-inset {
+    inset: 16px;
+    border-radius: 26px;
+  }
+
+  .hero-content-top {
+    top: 32px;
+    right: 32px;
+    gap: 16px;
+  }
+
+  .song-hy-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+  }
+
+  .song-hy-badge svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-names-pill {
+    min-width: 145px;
+    padding: 30px 24px;
+    border-radius: 30px;
+  }
+
+  .hero-names-pill .name {
+    font-size: 2.35rem;
+  }
+
+  .diamond-badge {
+    width: 42px;
+    height: 42px;
+  }
+
+  .diamond-badge span {
+    font-size: 1rem;
+  }
+
+  .section-countdown {
+    padding: 38px 30px 42px;
+    margin: 14px 24px 24px;
+  }
+
+  .countdown-title {
+    font-size: 3.2rem;
+  }
+
+  .timer-item {
+    min-width: 75px;
+  }
+
+  .timer-number {
+    font-size: 2.9rem;
+  }
+
+  .section-save-date {
+    padding: 0 24px 28px;
+  }
+
+  .save-date-card {
+    padding: 34px 28px 38px;
+    border-radius: 36px;
+  }
+
+  .word-save {
+    font-size: 4.2rem;
+  }
+
+  .word-the {
+    font-size: 1.65rem;
+    margin-left: 50px;
+    margin-top: -8px;
+    margin-bottom: -8px;
+  }
+
+  .word-date {
+    font-size: 4.2rem;
+    margin-left: 98px;
+  }
+
+  .save-date-badge {
+    margin-left: 98px;
+    padding: 6px;
+  }
+
+  .cal-day,
+  .cal-month {
+    font-size: 1.32rem;
+    min-width: 28px;
+  }
+
+  .cal-sep-v {
+    height: 20px;
+  }
+
+  .cal-year {
+    font-size: 1.45rem;
+    letter-spacing: 2.5px;
+  }
+
+  .save-date-item.tall {
+    height: 480px;
+    border-radius: 24px;
+  }
+
+  .save-date-item.sq1,
+  .save-date-item.sq2 {
+    height: 233px;
+    border-radius: 24px;
+  }
+
+  .section-invitation {
+    padding: 50px 28px 60px;
+  }
+
+  .flower-top-left {
+    top: 5px;
+    left: -40px;
+    width: 320px;
+  }
+
+  .flower-bottom-right {
+    bottom: 5px;
+    right: -45px;
+    width: 340px;
+  }
+
+  .invitation-paper-sheet {
+    padding: 52px 34px 44px;
+    box-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.04),
+      0 14px 32px -2px rgba(0, 0, 0, 0.13),
+      0 26px 54px -4px rgba(0, 0, 0, 0.09);
+  }
+
+  .venue-name {
+    font-size: 2.3rem;
+  }
+
+  .invitation-datetime {
+    font-size: 1.55rem;
+  }
+
+  .btn-map {
+    font-size: 0.95rem;
+    padding: 10px 22px;
+  }
+
+  .section-couple {
+    padding: 0 24px 36px;
+  }
+
+  .couple-columns-wrap {
+    gap: 24px;
+  }
+
+  .col-bride {
+    margin-top: -10px;
+  }
+
+  .couple-heading {
+    font-size: 3.1rem;
+    margin-bottom: 6px;
+    padding-right: 8px;
+  }
+
+  .couple-photo-box {
+    height: 380px;
+    border-radius: 32px;
+  }
+
+  .couple-person-name {
+    font-size: 1.65rem;
+    margin-top: 18px;
+  }
+
+  .pillar-line-pin {
+    min-height: 60px;
+  }
+
+  .parent-name-line {
+    font-size: 0.86rem;
+  }
+
+  .couple-center-ampersand {
+    top: 430px;
+    font-size: 4.6rem;
+  }
+
+  .section-timeline {
+    margin: 18px 24px 32px;
+    padding: 42px 24px 42px;
+  }
+
+  .timeline-heading {
+    font-size: 3.4rem;
+  }
+
+  .timeline-icon-wrap {
+    width: 54px;
+    height: 54px;
+  }
+
+  .timeline-icon-wrap svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .timeline-time {
+    font-size: 1.35rem;
+  }
+
+  .timeline-title {
+    font-size: 0.75rem;
+  }
+
+  .section-dresscode {
+    margin: 0 24px 32px;
+    padding: 36px 24px 38px;
+  }
+
+  .dresscode-heading {
+    font-size: 3.4rem;
+  }
+
+  .color-swatch {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+  }
+
+  .section-gallery {
+    padding: 18px 24px 32px;
+  }
+
+  .gallery-paper-card {
+    padding: 42px 24px 32px;
+    border-radius: 28px;
+  }
+
+  .gallery-heading {
+    font-size: 3.4rem;
+  }
+
+  .gallery-quote {
+    font-size: 1.08rem;
+  }
+
+  .g-item-1, .g-col-forever { height: 350px; }
+  .g-col-forever .gallery-tag-text { font-size: 3.2rem; }
+  .g-item-3, .g-item-4, .g-item-5 { height: 220px; }
+  .g-item-6 { height: 250px; }
+  .g-item-7, .g-item-8 { height: 280px; }
+
+  .section-rsvp {
+    margin: 18px 24px 40px;
+    padding: 42px 28px 44px;
+  }
+
+  .form-control {
+    padding: 16px 24px;
+    font-size: 0.95rem;
+  }
+
+  .btn-submit {
+    padding: 17px;
+    font-size: 1.05rem;
+  }
+
+  /* Floating controls rộng hơn & dễ thao tác */
+  .floating-music-btn {
+    width: 54px;
+    height: 54px;
+    bottom: 32px;
+    left: 32px;
+  }
+
+  .floating-theme-widget {
+    bottom: 32px;
+    right: 32px;
+  }
+
+  .theme-toggle-btn {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+/* 3. Màn hình Desktop Lớn (>= 1440px) */
+@media (min-width: 1440px) {
+  .wedding-app {
+    max-width: 780px;
+  }
+
+  .hero-card {
+    height: 750px;
+  }
+
+  .save-date-item.tall {
+    height: 510px;
+  }
+  .save-date-item.sq1,
+  .save-date-item.sq2 {
+    height: 248px;
+  }
+
+  .couple-photo-box {
+    height: 420px;
+  }
+
+  .couple-center-ampersand {
+    top: 470px;
+  }
+
+  .g-item-1, .g-col-forever { height: 390px; }
+  .g-col-forever .gallery-tag-text { font-size: 3.5rem; }
+  .g-col-forever .g-item-2 { height: calc(100% - 60px); min-height: 310px; }
+  .g-item-3, .g-item-4, .g-item-5 { height: 250px; }
+  .g-item-6 { height: 280px; }
+  .g-item-7, .g-item-8 { height: 310px; }
+}
+
+

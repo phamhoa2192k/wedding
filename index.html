@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="green">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Thiệp Cưới | Đức Hoà & Khánh Huyền</title>
+  
+  <!-- SEO & Social Sharing Meta Tags -->
+  <meta name="description" content="Thiệp cưới điện tử của Đức Hoà & Khánh Huyền - 29.11.2026">
+  <meta property="og:title" content="Thiệp Cưới | Đức Hoà & Khánh Huyền">
+  <meta property="og:description" content="Trân trọng kính mời quý khách đến chung vui cùng gia đình chúng tôi!">
+  <meta property="og:image" content="assets/images/hero.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon Double Happiness -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%238e2b20'/><text x='50%' y='68%' font-size='55' font-weight='bold' text-anchor='middle' fill='%23ffd700'>囍</text></svg>">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Khung giao diện chính (Chuẩn Mobile-First) -->
+  <main class="wedding-app">
+
+    <!-- ====================================================================
+         SECTION 1: HERO (Cover Image, Song Hỷ, Tên Cô Dâu Chú Rể, Ngày)
+         ==================================================================== -->
+    <section class="section-hero" id="hero">
+      <div class="hero-card">
+        <img src="assets/images/hero.jpg" alt="Đức Hoà & Khánh Huyền" class="hero-card-img" id="hero-img">
+        <div class="hero-overlay"></div>
+        <div class="hero-border-inset"></div>
+
+        <div class="hero-content-top">
+          <!-- Huy hiệu Song Hỷ (囍) -->
+          <div class="song-hy-badge">
+            <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path d="M891.1 664.7 L507.3 664.7 L507.3 591.7 L573 591.7 C567.6 578.2 562.5 565.2 557.6 552.7 L601.4 537.3 L527.6 537.3 L527.6 367.7 L861.9 367.7 L861.9 537.3 L790.5 537.3 L840 551.9 C832.4 564.4 824.8 577.6 817.2 591.7 L891.1 591.7 Z M481.3 664.7 L108.9 664.7 L108.9 591.7 L181.9 591.7 C176.5 578.2 171.4 565.2 166.5 552.7 L210.3 537.3 L136.5 537.3 L136.5 367.7 L463.5 367.7 L463.5 537.3 L388.8 537.3 L435.9 551.1 C428.3 564.1 420.5 577.6 412.4 591.7 L481.3 591.7 Z M786.4 900 L786.4 872.4 L605.5 872.4 L605.5 900 L524.3 900 L524.3 699.6 L867.5 699.6 L867.5 900 Z M385.6 900 L385.6 872.4 L214.4 872.4 L214.4 900 L133.3 900 L133.3 699.6 L466.7 699.6 L466.7 900 Z M502.4 156 L651.7 156 L651.7 100 L737.7 100 L737.7 156 L889.5 156 L889.5 228.2 L737.7 228.2 L737.7 265.5 L870.8 265.5 L870.8 332 L521.9 332 L521.9 265.5 L651.7 265.5 L651.7 228.2 L502.4 228.2 Z M111.4 156 L260.6 156 L260.6 100 L346.7 100 L346.7 156 L481.3 156 L481.3 228.2 L346.7 228.2 L346.7 265.5 L463.5 265.5 L463.5 332 L130.8 332 L130.8 265.5 L260.6 265.5 L260.6 228.2 L111.4 228.2 Z M786.4 766.1 L605.5 766.1 L605.5 805.1 L786.4 805.1 Z M385.6 766.1 L214.4 766.1 L214.4 805.1 L385.6 805.1 Z M602.2 470.8 L787.2 470.8 L787.2 435.9 L602.2 435.9 Z M211.2 470.8 L388.8 470.8 L388.8 435.9 L211.2 435.9 Z M661.5 591.7 L732.9 591.7 C741.5 572.2 749.4 554.1 756.4 537.3 L639.6 537.3 C646.6 554.6 653.9 572.8 661.5 591.7 Z M270.4 591.7 L328 591.7 C337.2 572.2 345.3 554.1 352.3 537.3 L248.5 537.3 C255.5 554.6 262.8 572.8 270.4 591.7 Z" fill-rule="evenodd"/>
+            </svg>
+          </div>
+
+          <!-- Khung tên Cô Dâu & Chú Rể dạng capsule bo tròn -->
+          <div class="hero-names-pill">
+            <span class="name bride-name" id="hero-bride-name">Khánh<br>Huyền</span>
+            <span class="bullet">•</span>
+            <span class="name groom-name" id="hero-groom-name">Đức<br>Hoà</span>
+          </div>
+
+          <!-- Các hình quả trám hiển thị ngày (29 / 11 / 26) -->
+          <div class="hero-date-diamonds" id="hero-date-diamonds">
+            <div class="diamond-badge"><span id="hero-diamond-day">29</span></div>
+            <div class="diamond-badge"><span id="hero-diamond-month">11</span></div>
+            <div class="diamond-badge"><span id="hero-diamond-year">26</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: ĐẾM NGƯỢC (Our wedding day)
+         ==================================================================== -->
+    <section class="section-countdown torn-paper reveal-on-scroll reveal-up" id="countdown">
+      <div class="countdown-wrapper">
+        <h2 class="countdown-title font-script">Our wedding day</h2>
+        <div class="countdown-timer">
+          <div class="timer-item reveal-on-scroll reveal-pop delay-1">
+            <div class="timer-number" id="cd-days">00</div>
+            <div class="timer-label">Days</div>
+          </div>
+          <div class="timer-separator">:</div>
+          <div class="timer-item reveal-on-scroll reveal-pop delay-2">
+            <div class="timer-number" id="cd-hours">00</div>
+            <div class="timer-label">Hours</div>
+          </div>
+          <div class="timer-separator">:</div>
+          <div class="timer-item reveal-on-scroll reveal-pop delay-3">
+            <div class="timer-number" id="cd-minutes">00</div>
+            <div class="timer-label">Minutes</div>
+          </div>
+          <div class="timer-separator">:</div>
+          <div class="timer-item reveal-on-scroll reveal-pop delay-4">
+            <div class="timer-number" id="cd-seconds">00</div>
+            <div class="timer-label">Seconds</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: SAVE THE DATE (Lưới ảnh nghệ thuật bất đối xứng)
+         ==================================================================== -->
+    <section class="section-save-date" id="save-the-date">
+      <div class="save-date-card reveal-on-scroll reveal-up" id="save-date-card">
+        <div class="save-date-header reveal-on-scroll reveal-left delay-1">
+          <h2 class="save-date-title">
+            <span class="std-word word-save">Save</span>
+            <span class="std-word word-the">The</span>
+            <span class="std-word word-date">Date</span>
+          </h2>
+          <div class="save-date-badge calendar-badge">
+            <div class="cal-inner">
+              <div class="cal-top">
+                <span class="cal-day font-serif" id="std-cal-day">29</span>
+                <span class="cal-sep-v"></span>
+                <span class="cal-month font-serif" id="std-cal-month">11</span>
+              </div>
+              <div class="cal-sep-h"></div>
+              <div class="cal-bottom">
+                <span class="cal-year font-serif" id="std-cal-year">2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="save-date-grid">
+          <div class="save-date-item tall reveal-on-scroll reveal-scale delay-1">
+            <img src="assets/images/save_date_1.jpg" id="save-date-img-1" alt="Save the date" loading="lazy">
+          </div>
+          <div class="save-date-item sq1 reveal-on-scroll reveal-right delay-2">
+            <img src="assets/images/save_date_2.jpg" id="save-date-img-2" alt="Save the date" loading="lazy">
+          </div>
+          <div class="save-date-item sq2 reveal-on-scroll reveal-right delay-3">
+            <img src="assets/images/save_date_3.jpg" id="save-date-img-3" alt="Save the date" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Họa tiết hoa mẫu đơn trang trí chuyển tiếp -->
+      <div class="floral-divider">
+        <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 25 Q50 5 100 25 T190 25" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <circle cx="100" cy="25" r="4" fill="currentColor"/>
+          <path d="M90 25 C90 15, 110 15, 110 25 C110 35, 90 35, 90 25 Z" stroke-width="1"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: THƯ MỜI TIỆC CƯỚI (Tờ giấy nổi trên nền hoa Magnolia)
+         ==================================================================== -->
+    <section class="section-invitation reveal-on-scroll reveal-up" id="invitation">
+      <!-- Nền hoa Magnolia (Background Layer) -->
+      <div class="invitation-magnolia-bg" aria-hidden="true">
+        <img src="assets/images/magnolia.png" alt="" class="magnolia-flower flower-top-left">
+        <img src="assets/images/magnolia.png" alt="" class="magnolia-flower flower-bottom-right">
+      </div>
+
+      <!-- Tờ giấy thư mời nổi ở phía trên (Floating Paper Sheet) -->
+      <div class="invitation-paper-sheet torn-paper">
+        <p class="invitation-intro reveal-on-scroll reveal-up delay-1">
+          TRÂN TRỌNG KÍNH MỜI QUÝ KHÁCH<br>
+          ĐẾN CHUNG VUI CÙNG GIA ĐÌNH CHÚNG TÔI TẠI
+        </p>
+
+        <h1 class="venue-name font-serif reveal-on-scroll reveal-scale delay-2" id="invitation-venue-name">TẠI TƯ GIA NHÀ TRAI</h1>
+        <p class="venue-address reveal-on-scroll reveal-up delay-2" id="invitation-venue-address">(Xã Bình Thanh - Tỉnh Hưng Yên)</p>
+
+        <div class="invitation-datetime font-serif reveal-on-scroll reveal-up delay-3" id="invitation-datetime">
+          14:00 | CHỦ NHẬT | 29.11.2026
+        </div>
+
+        <a href="https://maps.app.goo.gl/v3dikxQMnXr4cf4JA" target="_blank" rel="noopener" class="btn-map reveal-on-scroll reveal-up delay-3" id="invitation-map-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          <span>CHỈ ĐƯỜNG</span>
+        </a>
+
+        <p class="invitation-salute font-script reveal-on-scroll reveal-up delay-3">Rất hân hạnh được đón tiếp !</p>
+
+        <div class="song-hy-badge small reveal-on-scroll reveal-pop delay-4">
+          <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <path d="M891.1 664.7 L507.3 664.7 L507.3 591.7 L573 591.7 C567.6 578.2 562.5 565.2 557.6 552.7 L601.4 537.3 L527.6 537.3 L527.6 367.7 L861.9 367.7 L861.9 537.3 L790.5 537.3 L840 551.9 C832.4 564.4 824.8 577.6 817.2 591.7 L891.1 591.7 Z M481.3 664.7 L108.9 664.7 L108.9 591.7 L181.9 591.7 C176.5 578.2 171.4 565.2 166.5 552.7 L210.3 537.3 L136.5 537.3 L136.5 367.7 L463.5 367.7 L463.5 537.3 L388.8 537.3 L435.9 551.1 C428.3 564.1 420.5 577.6 412.4 591.7 L481.3 591.7 Z M786.4 900 L786.4 872.4 L605.5 872.4 L605.5 900 L524.3 900 L524.3 699.6 L867.5 699.6 L867.5 900 Z M385.6 900 L385.6 872.4 L214.4 872.4 L214.4 900 L133.3 900 L133.3 699.6 L466.7 699.6 L466.7 900 Z M502.4 156 L651.7 156 L651.7 100 L737.7 100 L737.7 156 L889.5 156 L889.5 228.2 L737.7 228.2 L737.7 265.5 L870.8 265.5 L870.8 332 L521.9 332 L521.9 265.5 L651.7 265.5 L651.7 228.2 L502.4 228.2 Z M111.4 156 L260.6 156 L260.6 100 L346.7 100 L346.7 156 L481.3 156 L481.3 228.2 L346.7 228.2 L346.7 265.5 L463.5 265.5 L463.5 332 L130.8 332 L130.8 265.5 L260.6 265.5 L260.6 228.2 L111.4 228.2 Z M786.4 766.1 L605.5 766.1 L605.5 805.1 L786.4 805.1 Z M385.6 766.1 L214.4 766.1 L214.4 805.1 L385.6 805.1 Z M602.2 470.8 L787.2 470.8 L787.2 435.9 L602.2 435.9 Z M211.2 470.8 L388.8 470.8 L388.8 435.9 L211.2 435.9 Z M661.5 591.7 L732.9 591.7 C741.5 572.2 749.4 554.1 756.4 537.3 L639.6 537.3 C646.6 554.6 653.9 572.8 661.5 591.7 Z M270.4 591.7 L328 591.7 C337.2 572.2 345.3 554.1 352.3 537.3 L248.5 537.3 C255.5 554.6 262.8 572.8 270.4 591.7 Z" fill-rule="evenodd"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: THÔNG TIN CÔ DÂU CHÚ RỂ (Wedding of - 2 div riêng biệt)
+         ==================================================================== -->
+    <section class="section-couple" id="couple">
+      <div class="couple-columns-wrap">
+        <!-- Div bên trái: Chú Rể (Nằm cao hơn) -->
+        <div class="couple-col-box col-groom reveal-on-scroll reveal-left delay-1">
+          <div class="couple-photo-box">
+            <img src="assets/images/couple_groom.jpg" id="couple-groom-img" alt="Chú rể Phạm Đức Hoà" loading="lazy">
+          </div>
+          <div class="couple-info-block groom-side">
+            <h3 class="couple-person-name font-serif" id="couple-groom-name">ĐỨC HOÀ</h3>
+            <div class="family-pillar groom-pillar">
+              <div class="pillar-line-pin"></div>
+              <div class="pillar-content">
+                <span class="family-side-badge">NHÀ TRAI</span>
+                <p class="parent-name-line" id="parent-groom-father">Ông. Phạm Quốc Vang</p>
+                <p class="parent-name-line" id="parent-groom-mother">Bà. Nguyễn Thị Hoài</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dấu & nghệ thuật nằm giữa 2 div -->
+        <div class="couple-center-ampersand font-script reveal-on-scroll reveal-pop delay-2">&</div>
+
+        <!-- Div bên phải: Cô Dâu (Nằm thấp hơn, có chữ Wedding of ở trên đầu) -->
+        <div class="couple-col-box col-bride reveal-on-scroll reveal-right delay-2">
+          <h2 class="couple-heading font-script">Wedding of</h2>
+          <div class="couple-photo-box">
+            <img src="assets/images/couple_bride.jpg" id="couple-bride-img" alt="Cô dâu Bùi Thị Khánh Huyền" loading="lazy">
+          </div>
+          <div class="couple-info-block bride-side">
+            <h3 class="couple-person-name font-serif" id="couple-bride-name">KHÁNH HUYỀN</h3>
+            <div class="family-pillar bride-pillar">
+              <div class="pillar-content">
+                <span class="family-side-badge">NHÀ GÁI</span>
+                <p class="parent-name-line" id="parent-bride-father">Ông. Bùi Văn Thọ</p>
+                <p class="parent-name-line" id="parent-bride-mother">Bà. Nguyễn Thị Hồng</p>
+              </div>
+              <div class="pillar-line-pin"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: LỊCH TRÌNH TIỆC CƯỚI (Timeline)
+         ==================================================================== -->
+    <section class="section-timeline torn-paper reveal-on-scroll reveal-up" id="timeline">
+      <h2 class="timeline-heading font-script reveal-on-scroll reveal-up">Timeline</h2>
+
+      <div class="timeline-items" id="timeline-items">
+        <!-- 14:00 Đón khách -->
+        <div class="timeline-node reveal-on-scroll reveal-up delay-1">
+          <div class="timeline-icon-wrap">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <div class="timeline-time">14:00</div>
+          <div class="timeline-title">ĐÓN TIẾP<br>KHÁCH MỜI</div>
+        </div>
+
+        <!-- 14:30 Làm lễ -->
+        <div class="timeline-node reveal-on-scroll reveal-up delay-2">
+          <div class="timeline-icon-wrap">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="14" r="7"/>
+              <path d="M9 7l3-4 3 4"/>
+              <circle cx="12" cy="4" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="timeline-time">14:30</div>
+          <div class="timeline-title">BẮT ĐẦU LỄ<br>THÀNH HÔN</div>
+        </div>
+
+        <!-- 15:00 Khai tiệc -->
+        <div class="timeline-node reveal-on-scroll reveal-up delay-3">
+          <div class="timeline-icon-wrap">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2v20M21 2v4a3 3 0 0 1-3 3M3 2v7a4 4 0 0 0 4 4v9M7 2v7M5 2v7"/>
+            </svg>
+          </div>
+          <div class="timeline-time">15:00</div>
+          <div class="timeline-title">CHUNG VUI<br>KHAI TIỆC</div>
+        </div>
+
+        <!-- 16:30 Mini game & khiêu vũ -->
+        <div class="timeline-node reveal-on-scroll reveal-up delay-4">
+          <div class="timeline-icon-wrap">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18V5l12-2v13M9 9l12-2"/>
+              <circle cx="6" cy="18" r="3"/>
+              <circle cx="18" cy="16" r="3"/>
+            </svg>
+          </div>
+          <div class="timeline-time">16:30</div>
+          <div class="timeline-title">MINI GAME<br>& KHIÊU VŨ</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: TRANG PHỤC GỢI Ý (Dresscode)
+         ==================================================================== -->
+    <section class="section-dresscode reveal-on-scroll reveal-up" id="dresscode">
+      <h2 class="dresscode-heading font-script reveal-on-scroll reveal-right">Dresscode</h2>
+
+      <div class="dresscode-palette">
+        <div class="color-swatch swatch-1 reveal-on-scroll reveal-pop delay-1" title="Trắng"></div>
+        <div class="color-swatch swatch-2 reveal-on-scroll reveal-pop delay-2" title="Đen / Tối"></div>
+        <div class="color-swatch swatch-3 reveal-on-scroll reveal-pop delay-3" title="Màu Chủ Đạo"></div>
+        <div class="color-swatch swatch-4 reveal-on-scroll reveal-pop delay-4" title="Nâu Be / Vàng Khói"></div>
+        <div class="color-swatch swatch-5 reveal-on-scroll reveal-pop delay-5" title="Kem / Pastel"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: ALBUM ẢNH KỶ NIỆM (Our Memories)
+         ==================================================================== -->
+    <section class="section-gallery" id="gallery">
+      <div class="gallery-paper-card torn-paper reveal-on-scroll reveal-up">
+        <h2 class="gallery-heading font-script reveal-on-scroll reveal-up">Our Memories</h2>
+        <p class="gallery-quote reveal-on-scroll reveal-up delay-1">
+          Mỗi trang album là một chương nhỏ của câu chuyện tình yêu,<br>
+          được viết bằng những ánh mắt, nụ cười và những lần nắm tay thật chặt.
+        </p>
+
+        <!-- Lưới ảnh collage bám sát bố cục 3.jpg -->
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Ảnh 1: Groom ôm Bride, kèm huy hiệu Song Hỷ floating ở góc trên phải -->
+          <div class="gallery-item g-item-1 reveal-on-scroll reveal-scale delay-1">
+            <img src="assets/images/gallery_1.jpg" id="gallery-img-1" alt="Wedding Memory 1" loading="lazy">
+            <div class="song-hy-badge small gallery-floating-songhy">
+              <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path d="M891.1 664.7 L507.3 664.7 L507.3 591.7 L573 591.7 C567.6 578.2 562.5 565.2 557.6 552.7 L601.4 537.3 L527.6 537.3 L527.6 367.7 L861.9 367.7 L861.9 537.3 L790.5 537.3 L840 551.9 C832.4 564.4 824.8 577.6 817.2 591.7 L891.1 591.7 Z M481.3 664.7 L108.9 664.7 L108.9 591.7 L181.9 591.7 C176.5 578.2 171.4 565.2 166.5 552.7 L210.3 537.3 L136.5 537.3 L136.5 367.7 L463.5 367.7 L463.5 537.3 L388.8 537.3 L435.9 551.1 C428.3 564.1 420.5 577.6 412.4 591.7 L481.3 591.7 Z M786.4 900 L786.4 872.4 L605.5 872.4 L605.5 900 L524.3 900 L524.3 699.6 L867.5 699.6 L867.5 900 Z M385.6 900 L385.6 872.4 L214.4 872.4 L214.4 900 L133.3 900 L133.3 699.6 L466.7 699.6 L466.7 900 Z M502.4 156 L651.7 156 L651.7 100 L737.7 100 L737.7 156 L889.5 156 L889.5 228.2 L737.7 228.2 L737.7 265.5 L870.8 265.5 L870.8 332 L521.9 332 L521.9 265.5 L651.7 265.5 L651.7 228.2 L502.4 228.2 Z M111.4 156 L260.6 156 L260.6 100 L346.7 100 L346.7 156 L481.3 156 L481.3 228.2 L346.7 228.2 L346.7 265.5 L463.5 265.5 L463.5 332 L130.8 332 L130.8 265.5 L260.6 265.5 L260.6 228.2 L111.4 228.2 Z M786.4 766.1 L605.5 766.1 L605.5 805.1 L786.4 805.1 Z M385.6 766.1 L214.4 766.1 L214.4 805.1 L385.6 805.1 Z M602.2 470.8 L787.2 470.8 L787.2 435.9 L602.2 435.9 Z M211.2 470.8 L388.8 470.8 L388.8 435.9 L211.2 435.9 Z M661.5 591.7 L732.9 591.7 C741.5 572.2 749.4 554.1 756.4 537.3 L639.6 537.3 C646.6 554.6 653.9 572.8 661.5 591.7 Z M270.4 591.7 L328 591.7 C337.2 572.2 345.3 554.1 352.3 537.3 L248.5 537.3 C255.5 554.6 262.8 572.8 270.4 591.7 Z" fill-rule="evenodd"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Cột 2: Chữ Forever ở trên, bức ảnh cô dâu thấp xuống dưới chữ Forever -->
+          <div class="g-col-forever reveal-on-scroll reveal-scale delay-2">
+            <span class="gallery-tag-text font-script">Forever</span>
+            <div class="gallery-item g-item-2">
+              <img src="assets/images/gallery_2.jpg" id="gallery-img-2" alt="Wedding Memory 2" loading="lazy">
+            </div>
+          </div>
+          <div class="gallery-item g-item-3 reveal-on-scroll reveal-scale delay-1">
+            <img src="assets/images/gallery_3.jpg" id="gallery-img-3" alt="Wedding Memory 3" loading="lazy">
+          </div>
+          <div class="gallery-item g-item-4 reveal-on-scroll reveal-scale delay-2">
+            <img src="assets/images/gallery_4.jpg" id="gallery-img-4" alt="Wedding Memory 4" loading="lazy">
+          </div>
+          <div class="gallery-item g-item-5 reveal-on-scroll reveal-scale delay-3">
+            <img src="assets/images/gallery_5.jpg" id="gallery-img-5" alt="Wedding Memory 5" loading="lazy">
+          </div>
+          <div class="gallery-item g-item-6 reveal-on-scroll reveal-scale delay-2">
+            <img src="assets/images/gallery_6.jpg" id="gallery-img-6" alt="Wedding Memory 6" loading="lazy">
+          </div>
+          <div class="gallery-item g-item-7 reveal-on-scroll reveal-scale delay-3">
+            <img src="assets/images/gallery_7.jpg" id="gallery-img-7" alt="Wedding Memory 7" loading="lazy">
+          </div>
+          <div class="gallery-item g-item-8 reveal-on-scroll reveal-scale delay-4">
+            <img src="assets/images/save_date_1.jpg" id="gallery-img-8" alt="Wedding Memory 8" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 9: XÁC NHẬN THAM DỰ (RSVP Form)
+         ==================================================================== -->
+    <section class="section-rsvp torn-paper reveal-on-scroll reveal-up" id="rsvp">
+      <p class="rsvp-note reveal-on-scroll reveal-up">
+        Vui lòng xác nhận sự tham dự của bạn để chúng mình chuẩn bị đón tiếp một cách chu đáo nhất.<br>
+        Trân trọng cảm ơn!
+      </p>
+
+      <form id="rsvp-form" class="rsvp-form">
+        <div class="form-group reveal-on-scroll reveal-up delay-1">
+          <input type="text" name="name" class="form-control" id="rsvp-name" placeholder="Tên của bạn" required>
+        </div>
+
+        <div class="form-group reveal-on-scroll reveal-up delay-2">
+          <textarea name="wishes" class="form-control" id="rsvp-wishes" placeholder="Gửi lời chúc đến cô dâu chú rể"></textarea>
+        </div>
+
+        <div class="form-group reveal-on-scroll reveal-up delay-3">
+          <select name="attendance" class="form-control" id="rsvp-attendance" required>
+            <option value="" disabled selected>Xác nhận tham dự?</option>
+            <option value="yes">Chắc chắn tôi sẽ tham dự</option>
+            <option value="no">Rất tiếc tôi không thể tham dự</option>
+          </select>
+        </div>
+
+        <div class="form-group reveal-on-scroll reveal-up delay-4">
+          <input type="text" name="plus_one" class="form-control" id="rsvp-plus-one" placeholder="Bạn có tham dự cùng ai khác không?">
+        </div>
+
+        <div class="form-group reveal-on-scroll reveal-up delay-5">
+          <select name="guest_of" class="form-control" id="rsvp-guest-of" required>
+            <option value="" disabled selected>Bạn là khách mời của ai?</option>
+            <option value="groom" id="rsvp-opt-groom">Khách mời của Chú rể (Nhà trai)</option>
+            <option value="bride" id="rsvp-opt-bride">Khách mời của Cô dâu (Nhà gái)</option>
+            <option value="both">Bạn chung của cả hai</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit reveal-on-scroll reveal-up delay-6" id="rsvp-submit">XÁC NHẬN</button>
+      </form>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 10: TIỆN ÍCH MỪNG CƯỚI / QUÉT MÃ QR (Tùy chọn)
+         ==================================================================== -->
+    <section class="section-gift reveal-on-scroll reveal-scale" id="gift-section">
+      <button type="button" class="btn-gift" id="btn-open-gift">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 12V22H4V12H20M20 6H16.8A3 3 0 0 0 14 3.5C13.2 3.5 12.5 3.9 12 4.5C11.5 3.9 10.8 3.5 10 3.5A3 3 0 0 0 7.2 6H4C2.9 6 2 6.9 2 8V10H22V8C22 6.9 21.1 6 20 6ZM10 6C9.4 6 9 5.6 9 5C9 4.4 9.4 4 10 4C10.6 4 11 4.4 11 5C11 5.6 10.6 6 10 6ZM14 6C13.4 6 13 5.6 13 5C13 4.4 13.4 4 14 4C14.6 4 15 4.4 15 5C15 5.6 14.6 6 14 6Z"/>
+        </svg>
+        <span>Gửi Mừng Cưới (Hộp Mừng Cưới / QR)</span>
+      </button>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       AUDIO PLAYER & FLOATING WIDGETS
+       ==================================================================== -->
+  <!-- Thẻ phát nhạc nền ẩn -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="assets/audio/wedding-song.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Nút bật/tắt nhạc nổi (hình đĩa than xoay) -->
+  <button type="button" class="floating-music-btn" id="floating-music-btn" title="Bật/Tắt nhạc cưới">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <circle cx="12" cy="12" r="3" fill="currentColor"/>
+      <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+  </button>
+
+  <!-- Nút chuyển đổi & xem thử tông màu (Theme Switcher) -->
+  <div class="floating-theme-widget">
+    <div class="theme-palette-popup" id="theme-palette-popup">
+      <div class="theme-popup-title">Chọn Tông Màu (Theme)</div>
+      <div class="theme-options">
+        <button class="theme-opt-btn theme-opt-green" data-theme="green" title="Xanh Rêu (Mẫu Gốc)"></button>
+        <button class="theme-opt-btn theme-opt-gold" data-theme="gold" title="Vàng Ánh Kim"></button>
+        <button class="theme-opt-btn theme-opt-red" data-theme="red" title="Đỏ Truyền Thống"></button>
+        <button class="theme-opt-btn theme-opt-pink" data-theme="pink" title="Hồng Pastel"></button>
+        <button class="theme-opt-btn theme-opt-navy" data-theme="navy" title="Xanh Navy"></button>
+      </div>
+      <!-- <div class="theme-hint">Cấu hình cố định trong <code>js/config.js</code></div> -->
+    </div>
+    <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" title="Thử tông màu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Modal Lightbox phóng to ảnh khi nhấp chuột -->
+  <div class="modal-overlay lightbox-modal" id="lightbox-modal">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Đóng ảnh phóng to" title="Đóng (Esc)">&times;</button>
+    <div class="modal-content">
+      <img id="lightbox-img" src="" alt="Ảnh cưới phóng to">
+    </div>
+  </div>
+
+  <!-- Modal Hộp Mừng Cưới & Mã QR -->
+  <div class="modal-overlay" id="gift-modal">
+    <div class="modal-content" style="max-width: 360px;">
+      <button class="modal-close" id="gift-modal-close">&times;</button>
+      <h3 class="font-serif" style="font-size: 1.5rem; margin-bottom: 8px; color: var(--text-heading);">HỘP MỪNG CƯỚI</h3>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">Gửi gắm lời chúc phúc & tình cảm đến đôi uyên ương</p>
+      
+      <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 16px;">
+        <button id="tab-groom" class="btn-map active" style="margin: 0; padding: 6px 14px; font-size: 0.8rem; cursor: pointer;">Chú Rể</button>
+        <button id="tab-bride" class="btn-map" style="margin: 0; padding: 6px 14px; font-size: 0.8rem; cursor: pointer;">Cô Dâu</button>
+      </div>
+
+      <!-- Tài khoản Chú Rể -->
+      <div id="gift-groom-content">
+        <div style="background: #f8f8f8; border-radius: 12px; padding: 12px; margin-bottom: 12px; text-align: left; font-size: 0.82rem;">
+          <div><strong>Ngân hàng:</strong> <span id="gift-groom-bank">MB Bank</span></div>
+          <div><strong>Số tài khoản:</strong> <span id="gift-groom-acc">0987654321</span></div>
+          <div><strong>Chủ tài khoản:</strong> <span id="gift-groom-name">PHAM DUC HOA</span></div>
+        </div>
+        <img id="gift-groom-qr" src="https://api.vietqr.io/image/970422-0987654321-compact2.png?amount=0&addInfo=Mung%20cuoi%20Duc%20Hoa&accountName=PHAM%20DUC%20HOA" alt="QR Mừng cưới chú rể" style="width: 200px; height: 200px; border-radius: 8px; margin: 0 auto; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      </div>
+
+      <!-- Tài khoản Cô Dâu -->
+      <div id="gift-bride-content" style="display: none;">
+        <div style="background: #f8f8f8; border-radius: 12px; padding: 12px; margin-bottom: 12px; text-align: left; font-size: 0.82rem;">
+          <div><strong>Ngân hàng:</strong> <span id="gift-bride-bank">Vietcombank</span></div>
+          <div><strong>Số tài khoản:</strong> <span id="gift-bride-acc">1234567890</span></div>
+          <div><strong>Chủ tài khoản:</strong> <span id="gift-bride-name">BUI THI KHANH HUYEN</span></div>
+        </div>
+        <img id="gift-bride-qr" src="https://api.vietqr.io/image/970436-1234567890-compact2.png?amount=0&addInfo=Mung%20cuoi%20Khanh%20Huyen&accountName=BUI%20THI%20KHANH%20HUYEN" alt="QR Mừng cưới cô dâu" style="width: 200px; height: 200px; border-radius: 8px; margin: 0 auto; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

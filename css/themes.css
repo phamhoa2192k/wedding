@@ -1,0 +1,180 @@
+/* ==========================================================================
+   THEME COLOR SYSTEM FOR WEDDING INVITATION
+   Tuân theo các tông màu: Xanh rêu (mẫu gốc), Vàng ánh kim, Đỏ truyền thống,
+   Hồng pastel lãng mạn, Xanh Navy quý phái.
+   ========================================================================== */
+
+:root,
+[data-theme="green"] {
+  --primary-color: #4a5a35;
+  --primary-light: #607346;
+  --primary-dark: #374326;
+  --primary-subtle: rgba(74, 90, 53, 0.12);
+  --accent-color: #b36331;
+  --accent-light: #cb7b49;
+  --accent-badge: #9c4c23;
+  --song-hy-badge: #8e2b20;
+  
+  --bg-page: #e8e4da;
+  --bg-card: #f9f8f4;
+  --bg-card-alt: #2d3822;
+  --bg-card-translucent: rgba(249, 248, 244, 0.92);
+  --bg-hero-pill: rgba(74, 90, 53, 0.88);
+  
+  --text-main: #272e1f;
+  --text-muted: #5e6653;
+  --text-light: #ffffff;
+  --text-script: #43542e;
+  --text-heading: #2d3822;
+  
+  --border-color: #d7d1c1;
+  --border-card: rgba(255, 255, 255, 0.4);
+  --shadow-soft: 0 10px 30px rgba(45, 56, 34, 0.08);
+  --shadow-card: 0 15px 35px rgba(39, 46, 31, 0.15);
+
+  --dresscode-1: #ffffff;
+  --dresscode-2: #1e1e1e;
+  --dresscode-3: #435328;
+  --dresscode-4: #8c773d;
+  --dresscode-5: #e7d6a4;
+}
+
+/* 1. Tông Vàng Ánh Kim (Luxury Champagne / Gold) */
+[data-theme="gold"] {
+  --primary-color: #92753a;
+  --primary-light: #a98947;
+  --primary-dark: #6e5425;
+  --primary-subtle: rgba(146, 117, 58, 0.12);
+  --accent-color: #c2953a;
+  --accent-light: #dcad4c;
+  --accent-badge: #a87922;
+  --song-hy-badge: #9b2820;
+  
+  --bg-page: #eee9dc;
+  --bg-card: #fdfbf7;
+  --bg-card-alt: #44371f;
+  --bg-card-translucent: rgba(253, 251, 247, 0.93);
+  --bg-hero-pill: rgba(146, 117, 58, 0.88);
+  
+  --text-main: #332b1d;
+  --text-muted: #736958;
+  --text-light: #ffffff;
+  --text-script: #8c6e33;
+  --text-heading: #44371f;
+  
+  --border-color: #e2d8c3;
+  --border-card: rgba(255, 255, 255, 0.45);
+  --shadow-soft: 0 10px 30px rgba(110, 84, 37, 0.08);
+  --shadow-card: 0 15px 35px rgba(70, 55, 28, 0.15);
+
+  --dresscode-1: #ffffff;
+  --dresscode-2: #24221f;
+  --dresscode-3: #92753a;
+  --dresscode-4: #c9a65d;
+  --dresscode-5: #f2e6cb;
+}
+
+/* 2. Tông Đỏ Truyền Thống / Burgundy Á Đông */
+[data-theme="red"] {
+  --primary-color: #8c262a;
+  --primary-light: #a63439;
+  --primary-dark: #65181b;
+  --primary-subtle: rgba(140, 38, 42, 0.12);
+  --accent-color: #c9933e;
+  --accent-light: #e0aa54;
+  --accent-badge: #8c262a;
+  --song-hy-badge: #961e22;
+  
+  --bg-page: #ebe2e2;
+  --bg-card: #fffaf9;
+  --bg-card-alt: #4a1315;
+  --bg-card-translucent: rgba(255, 250, 249, 0.93);
+  --bg-hero-pill: rgba(140, 38, 42, 0.88);
+  
+  --text-main: #361a1b;
+  --text-muted: #735354;
+  --text-light: #ffffff;
+  --text-script: #8c262a;
+  --text-heading: #4a1315;
+  
+  --border-color: #dec8c9;
+  --border-card: rgba(255, 255, 255, 0.45);
+  --shadow-soft: 0 10px 30px rgba(101, 24, 27, 0.08);
+  --shadow-card: 0 15px 35px rgba(74, 19, 21, 0.15);
+
+  --dresscode-1: #ffffff;
+  --dresscode-2: #261a1b;
+  --dresscode-3: #8c262a;
+  --dresscode-4: #c9933e;
+  --dresscode-5: #f7deda;
+}
+
+/* 3. Tông Hồng Pastel Lãng Mạn (Romantic Blush / Rose) */
+[data-theme="pink"] {
+  --primary-color: #9c5965;
+  --primary-light: #b36e7a;
+  --primary-dark: #733c46;
+  --primary-subtle: rgba(156, 89, 101, 0.12);
+  --accent-color: #bf7380;
+  --accent-light: #d68996;
+  --accent-badge: #9c5965;
+  --song-hy-badge: #9e2a3c;
+  
+  --bg-page: #eee4e6;
+  --bg-card: #fdfafd;
+  --bg-card-alt: #47262d;
+  --bg-card-translucent: rgba(253, 250, 253, 0.93);
+  --bg-hero-pill: rgba(156, 89, 101, 0.88);
+  
+  --text-main: #362024;
+  --text-muted: #75555a;
+  --text-light: #ffffff;
+  --text-script: #94505c;
+  --text-heading: #47262d;
+  
+  --border-color: #e2cdd1;
+  --border-card: rgba(255, 255, 255, 0.45);
+  --shadow-soft: 0 10px 30px rgba(115, 60, 70, 0.08);
+  --shadow-card: 0 15px 35px rgba(71, 38, 45, 0.15);
+
+  --dresscode-1: #ffffff;
+  --dresscode-2: #2b1f21;
+  --dresscode-3: #9c5965;
+  --dresscode-4: #cfa1a8;
+  --dresscode-5: #fcebee;
+}
+
+/* 4. Tông Xanh Navy Hoàng Gia (Classic Navy & Gold) */
+[data-theme="navy"] {
+  --primary-color: #27415e;
+  --primary-light: #3a577a;
+  --primary-dark: #192d42;
+  --primary-subtle: rgba(39, 65, 94, 0.12);
+  --accent-color: #b89047;
+  --accent-light: #cfa85e;
+  --accent-badge: #27415e;
+  --song-hy-badge: #8c262a;
+  
+  --bg-page: #dfe7ef;
+  --bg-card: #f8fbfe;
+  --bg-card-alt: #162638;
+  --bg-card-translucent: rgba(248, 251, 254, 0.93);
+  --bg-hero-pill: rgba(39, 65, 94, 0.88);
+  
+  --text-main: #1b2633;
+  --text-muted: #56687a;
+  --text-light: #ffffff;
+  --text-script: #233c57;
+  --text-heading: #162638;
+  
+  --border-color: #ccd7e2;
+  --border-card: rgba(255, 255, 255, 0.45);
+  --shadow-soft: 0 10px 30px rgba(25, 45, 66, 0.08);
+  --shadow-card: 0 15px 35px rgba(22, 38, 56, 0.15);
+
+  --dresscode-1: #ffffff;
+  --dresscode-2: #161e27;
+  --dresscode-3: #27415e;
+  --dresscode-4: #b89047;
+  --dresscode-5: #dbe4ee;
+}
