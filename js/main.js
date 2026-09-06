@@ -554,16 +554,19 @@ function initScrollAnimations() {
   if ('IntersectionObserver' in window) {
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -50px 0px', // Kích hoạt sớm hơn 50px trước khi chạm đáy
-      threshold: 0.12
+      rootMargin: '0px 0px -40px 0px', // Kích hoạt khi cách đáy màn hình 40px
+      threshold: 0.08
     };
 
-    const scrollObserver = new IntersectionObserver((entries, observer) => {
+    const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // Thêm class is-visible để kích hoạt hiệu ứng xuất hiện
           entry.target.classList.add('is-visible');
-          // Sau khi kích hoạt thì ngừng theo dõi phần tử đó để tối ưu hiệu năng
-          observer.unobserve(entry.target);
+        } else {
+          // Khi cuộn ra khỏi tầm nhìn, gỡ bỏ class is-visible
+          // để mỗi lần người dùng cuộn tới thì hiệu ứng đều chạy lại
+          entry.target.classList.remove('is-visible');
         }
       });
     }, observerOptions);
