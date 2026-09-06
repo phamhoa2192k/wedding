@@ -320,7 +320,7 @@ function initGalleryLightbox() {
 
   const targetImgs = document.querySelectorAll('.gallery-item img, .couple-photo-box img, .couple-photo-item img, .save-date-item img, .hero-card-img');
   targetImgs.forEach(img => {
-    img.style.cursor = 'zoom-in';
+    // img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => {
       lightboxImg.src = img.src;
       lightbox.classList.add('active');
