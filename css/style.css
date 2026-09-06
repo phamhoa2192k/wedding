@@ -1507,8 +1507,9 @@ select.form-control {
 .reveal-on-scroll {
   opacity: 0;
   will-change: transform, opacity;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transition-delay: 0s !important;
+  transition-property: opacity, transform;
+  transition-duration: 0.85s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-up {
@@ -1539,19 +1540,17 @@ select.form-control {
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translate(0, 0) scale(1);
-  transition-duration: 0.85s;
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Stagger Delays chỉ áp dụng khi phần tử xuất hiện (is-visible) để tạo hiệu ứng nối tiếp mượt mà */
-.reveal-on-scroll.is-visible.delay-1 { transition-delay: 0.1s !important; }
-.reveal-on-scroll.is-visible.delay-2 { transition-delay: 0.2s !important; }
-.reveal-on-scroll.is-visible.delay-3 { transition-delay: 0.3s !important; }
-.reveal-on-scroll.is-visible.delay-4 { transition-delay: 0.4s !important; }
-.reveal-on-scroll.is-visible.delay-5 { transition-delay: 0.5s !important; }
-.reveal-on-scroll.is-visible.delay-6 { transition-delay: 0.6s !important; }
-.reveal-on-scroll.is-visible.delay-7 { transition-delay: 0.7s !important; }
-.reveal-on-scroll.is-visible.delay-8 { transition-delay: 0.8s !important; }
+/* Stagger Delays để tạo hiệu ứng nối tiếp mượt mà */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+.delay-7 { transition-delay: 0.7s; }
+.delay-8 { transition-delay: 0.8s; }
 
 /* Hiệu ứng ban đầu của phần Hero khi vừa tải trang */
 .hero-card {
