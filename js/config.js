@@ -57,25 +57,34 @@ const WEDDING_CONFIG = {
     { time: '16:30', title: 'MINI GAME VÀ KHIÊU VŨ', icon: 'music' }
   ],
 
-  // 5. ĐƯỜNG DẪN HÌNH ẢNH (Các ảnh tạm thời được lưu trong assets/images/)
-  // Khi bạn có ảnh cưới thật, chỉ cần copy vào assets/images/ và sửa đường dẫn ở đây!
+  // 5. ĐƯỜNG DẪN HÌNH ẢNH (Sử dụng toàn bộ bộ ảnh cưới thực tế từ assets/root_images/)
   images: {
-    hero: 'assets/images/hero.jpg',
-    saveDateBg: 'assets/images/save_date_bg.jpg',
-    saveDate1: 'assets/images/save_date_1.jpg',
-    saveDate2: 'assets/images/save_date_2.jpg',
-    saveDate3: 'assets/images/save_date_3.jpg',
-    coupleGroom: 'assets/images/couple_groom.jpg',
-    coupleBride: 'assets/images/couple_bride.jpg',
+    hero: 'assets/root_images/HNH03761.JPG',
+    saveDateBg: 'assets/root_images/DRN00690.JPG',
+    saveDate1: 'assets/root_images/HNH03393.JPG',
+    saveDate2: 'assets/root_images/HNH03781.JPG',
+    saveDate3: 'assets/root_images/DRN00773.jpg',
+    saveDate4: 'assets/root_images/HNH02448.JPG',
+    saveDate5: 'assets/root_images/HNH02441.JPG',
+    saveDate6: 'assets/root_images/HNH02772.JPG',
+    saveDate7: 'assets/root_images/HNH03834.JPG',
+    saveDate8: 'assets/root_images/HNH02755.JPG',
+    saveDate9: 'assets/root_images/HNH02915.JPG',
+    coupleGroom: 'assets/root_images/HNH00660.JPG',
+    coupleBride: 'assets/root_images/HNH00291.JPG',
+    storyBanner: 'assets/root_images/HNH03680.JPG',
+    thankYou: 'assets/root_images/DRN00563.JPG',
     gallery: [
-      'assets/images/gallery_1.jpg',
-      'assets/images/gallery_2.jpg',
-      'assets/images/gallery_3.jpg',
-      'assets/images/gallery_4.jpg',
-      'assets/images/gallery_5.jpg',
-      'assets/images/gallery_6.jpg',
-      'assets/images/gallery_7.jpg',
-      'assets/images/save_date_1.jpg'
+      'assets/root_images/HNH00913.JPG',
+      'assets/root_images/HNH03352.JPG',
+      'assets/root_images/HNH00037.JPG',
+      'assets/root_images/HNH00317.JPG',
+      'assets/root_images/HNH00425.JPG',
+      'assets/root_images/HNH03619.JPG',
+      'assets/root_images/HNH01074.JPG',
+      'assets/root_images/HNH03348.JPG',
+      'assets/root_images/HNH00152.JPG',
+      'assets/root_images/HNH00222.JPG'
     ]
   },
 

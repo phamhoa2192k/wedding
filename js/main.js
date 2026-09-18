@@ -145,17 +145,22 @@ function initDynamicConfig() {
       saveDateCard.style.backgroundImage = `linear-gradient(140deg, rgba(15, 25, 18, 0.72) 0%, rgba(15, 25, 18, 0.48) 45%, rgba(15, 25, 18, 0.75) 100%), url('${cfg.images.saveDateBg}')`;
     }
 
-    const sd1 = document.getElementById('save-date-img-1');
-    if (sd1 && cfg.images.saveDate1) sd1.src = cfg.images.saveDate1;
-    const sd2 = document.getElementById('save-date-img-2');
-    if (sd2 && cfg.images.saveDate2) sd2.src = cfg.images.saveDate2;
-    const sd3 = document.getElementById('save-date-img-3');
-    if (sd3 && cfg.images.saveDate3) sd3.src = cfg.images.saveDate3;
+    for (let i = 1; i <= 9; i++) {
+      const sd = document.getElementById(`save-date-img-${i}`);
+      const src = cfg.images[`saveDate${i}`];
+      if (sd && src) sd.src = src;
+    }
 
     const cGroom = document.getElementById('couple-groom-img');
     if (cGroom && cfg.images.coupleGroom) cGroom.src = cfg.images.coupleGroom;
     const cBride = document.getElementById('couple-bride-img');
     if (cBride && cfg.images.coupleBride) cBride.src = cfg.images.coupleBride;
+
+    const storyImg = document.getElementById('story-banner-img');
+    if (storyImg && cfg.images.storyBanner) storyImg.src = cfg.images.storyBanner;
+
+    const thankImg = document.getElementById('thank-you-img');
+    if (thankImg && cfg.images.thankYou) thankImg.src = cfg.images.thankYou;
 
     if (Array.isArray(cfg.images.gallery)) {
       cfg.images.gallery.forEach((url, i) => {
@@ -318,7 +323,7 @@ function initGalleryLightbox() {
 
   if (!lightbox || !lightboxImg) return;
 
-  const targetImgs = document.querySelectorAll('.gallery-item img, .couple-photo-box img, .couple-photo-item img, .save-date-item img, .hero-card-img');
+  const targetImgs = document.querySelectorAll('.gallery-item img, .couple-photo-box img, .couple-photo-item img, .save-date-item img, .hero-card-img, .story-card-img, .thank-you-img');
   targetImgs.forEach(img => {
     // img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => {

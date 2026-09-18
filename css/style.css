@@ -54,10 +54,17 @@ img {
   flex-shrink: 0;
 }
 
-/* Riêng ảnh chân dung Chú rể & Cô dâu: Ưu tiên căn giữa trên (center 20%) 
-   để khuôn mặt cô dâu chú rể luôn nằm trọn trong khung hình, không bị cắt mất phần đầu */
+/* Riêng ảnh chân dung Chú rể & Cô dâu: Căn chỉnh vị trí khuôn mặt cô dâu chú rể đẹp nhất */
 .couple-photo-box img {
   object-position: center 20% !important;
+}
+
+.col-groom .couple-photo-box img {
+  object-position: 22% 20% !important;
+}
+
+.col-bride .couple-photo-box img {
+  object-position: center 15% !important;
 }
 
 body {
@@ -541,7 +548,7 @@ body::before {
 .save-date-item.tall {
   grid-column: 2 / 3;
   grid-row: 1 / 3;
-  height: 330px;
+  height: 328px;
 }
 
 .save-date-item.sq1 {
@@ -554,6 +561,39 @@ body::before {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   height: 158px;
+}
+
+.save-date-item.wide {
+  grid-column: 1 / 3;
+  height: 175px;
+}
+
+.save-date-item.tall-left {
+  grid-column: 1 / 2;
+  grid-row: 4 / 6;
+  height: 328px;
+}
+
+.save-date-item.sq3 {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+  height: 158px;
+}
+
+.save-date-item.sq4 {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+  height: 158px;
+}
+
+.save-date-item.duo1 {
+  grid-column: 1 / 2;
+  height: 175px;
+}
+
+.save-date-item.duo2 {
+  grid-column: 2 / 3;
+  height: 175px;
 }
 
 /* Floral motif divider */
@@ -1034,8 +1074,8 @@ body::before {
   border: 1.5px solid rgba(255, 255, 255, 0.75);
 }
 
-/* Cột 2: Chứa chữ Forever ở trên và ảnh 2 nằm thấp xuống dưới */
-.g-col-forever {
+.g-col-forever,
+.g-col-always {
   grid-column: 5 / 7;
   display: flex;
   flex-direction: column;
@@ -1043,7 +1083,8 @@ body::before {
   height: 250px;
 }
 
-.g-col-forever .gallery-tag-text {
+.g-col-forever .gallery-tag-text,
+.g-col-always .gallery-tag-text {
   font-family: 'Alex Brush', 'Great Vibes', cursive;
   font-size: 2.5rem;
   color: var(--text-script);
@@ -1053,7 +1094,8 @@ body::before {
   padding-right: 2px;
 }
 
-.g-col-forever .g-item-2 {
+.g-col-forever .g-item-2,
+.g-col-always .g-item-10 {
   flex: 1;
   height: calc(100% - 46px);
   min-height: 195px;
@@ -1087,7 +1129,7 @@ body::before {
   transform: scale(1.05);
 }
 
-/* Layout matching template 3.jpg */
+/* Layout matching template 3.jpg & harmonious extension */
 .g-item-1 {
   grid-column: 1 / 5;
   height: 250px;
@@ -1116,6 +1158,16 @@ body::before {
 .g-item-8 {
   grid-column: 3 / 7;
   height: 190px;
+}
+
+/* Hàng kết nối của album kỷ niệm (2 bức ảnh di sản 9 & 10) */
+.g-item-9 {
+  grid-column: 1 / 4;
+  height: 185px;
+}
+.g-item-10 {
+  grid-column: 4 / 7;
+  height: 185px;
 }
 
 /* ==========================================================================
@@ -1239,6 +1291,164 @@ select.form-control {
   width: 18px;
   height: 18px;
   fill: currentColor;
+}
+
+/* ==========================================================================
+   SECTION: STORY QUOTE BANNER
+   ========================================================================== */
+.section-story-banner {
+  padding: 0 16px 28px;
+}
+
+.story-card {
+  position: relative;
+  border-radius: 28px;
+  height: 380px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.story-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.story-card:hover .story-card-img {
+  transform: scale(1.03);
+}
+
+.story-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(15, 25, 18, 0.45) 50%,
+    rgba(15, 25, 18, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+.story-card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 28px 20px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.story-script {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 2.3rem;
+  color: #e5c07b;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.story-quote {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 12px;
+  max-width: 380px;
+}
+
+.story-divider-icon {
+  color: #e5c07b;
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   SECTION 11: THANK YOU CARD
+   ========================================================================== */
+.section-thank-you {
+  padding: 0 16px 28px;
+}
+
+.thank-you-card {
+  position: relative;
+  border-radius: 28px;
+  height: 440px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.thank-you-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.thank-you-card:hover .thank-you-img {
+  transform: scale(1.03);
+}
+
+.thank-you-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(15, 25, 18, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
+.thank-you-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 32px 20px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.thank-you-title {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: 3.4rem;
+  color: #e5c07b;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.thank-you-quote {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 16px;
+  max-width: 320px;
+}
+
+.thank-you-couple {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.thank-you-badge {
+  margin-top: 2px;
 }
 
 /* ==========================================================================
@@ -2066,12 +2276,22 @@ select.form-control {
     height: 750px;
   }
 
-  .save-date-item.tall {
+  .save-date-item.tall,
+  .save-date-item.tall-left {
     height: 510px;
   }
   .save-date-item.sq1,
-  .save-date-item.sq2 {
+  .save-date-item.sq2,
+  .save-date-item.sq3,
+  .save-date-item.sq4 {
     height: 248px;
+  }
+  .save-date-item.wide {
+    height: 260px;
+  }
+  .save-date-item.duo1,
+  .save-date-item.duo2 {
+    height: 270px;
   }
 
   .couple-photo-box {
@@ -2088,6 +2308,10 @@ select.form-control {
   .g-item-3, .g-item-4, .g-item-5 { height: 250px; }
   .g-item-6 { height: 280px; }
   .g-item-7, .g-item-8 { height: 310px; }
+  .g-item-9, .g-item-10 { height: 300px; }
+
+  .story-card { height: 500px; }
+  .thank-you-card { height: 580px; }
 }
 
 
