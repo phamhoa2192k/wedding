@@ -60,11 +60,11 @@ img {
 }
 
 .col-groom .couple-photo-box img {
-  object-position: 22% 20% !important;
+  object-position: left 15% !important;
 }
 
 .col-bride .couple-photo-box img {
-  object-position: center 15% !important;
+  object-position: right 35% !important;
 }
 
 body {
