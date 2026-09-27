@@ -43,6 +43,23 @@ const WEDDING_CONFIG = {
     fullDateText: '14:00 | CHỦ NHẬT | 29.11.2026'
   },
 
+  // Địa điểm tiệc Nhà Gái (Bên phải)
+  venueBride: {
+    name: 'TƯ GIA NHÀ GÁI',
+    address: 'Xã Kiến Xương - Tỉnh Hưng Yên',
+    time: '17:30 | THỨ BẢY | 28.11.2026',
+    mapUrl: 'https://maps.app.goo.gl/CfB3AjW6Ad3YDYFQ8'
+  },
+
+  // Địa điểm tiệc Nhà Trai (Bên trái)
+  venueGroom: {
+    name: 'TƯ GIA NHÀ TRAI',
+    address: 'Xã Bình Thanh - Tỉnh Hưng Yên',
+    time: '17:30 | THỨ BẢY | 28.11.2026',
+    mapUrl: 'https://maps.app.goo.gl/v3dikxQMnXr4cf4JA'
+  },
+
+  // Tương thích cấu hình đơn cũ
   venue: {
     name: 'TẠI TƯ GIA NHÀ TRAI',
     address: 'Xã Bình Thanh - Tỉnh Hưng Yên',

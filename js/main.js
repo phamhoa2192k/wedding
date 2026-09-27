@@ -86,19 +86,49 @@ function initDynamicConfig() {
     if (invDate && d.fullDateText) invDate.textContent = d.fullDateText;
   }
 
-  // 3. ĐỊA ĐIỂM & BẢN ĐỒ
-  if (cfg.venue) {
-    const venueName = document.getElementById('invitation-venue-name');
-    if (venueName && cfg.venue.name) venueName.textContent = cfg.venue.name;
+  // 3. ĐỊA ĐIỂM & BẢN ĐỒ (HỖ TRỢ CẢ NHÀ GÁI BÊN TRÁI & NHÀ TRAI BÊN PHẢI)
+  // 3.1 Nhà Gái (Bên trái)
+  const brideVenue = cfg.venueBride || cfg.venue;
+  if (brideVenue) {
+    const venueBrideName = document.getElementById('invitation-bride-venue-name');
+    if (venueBrideName && brideVenue.name) venueBrideName.textContent = brideVenue.name;
 
-    const venueAddr = document.getElementById('invitation-venue-address');
-    if (venueAddr && cfg.venue.address) {
-      const addr = cfg.venue.address.trim();
-      venueAddr.textContent = addr.startsWith('(') ? addr : `(${addr})`;
+    const venueBrideAddr = document.getElementById('invitation-bride-venue-address');
+    if (venueBrideAddr && brideVenue.address) {
+      const addr = brideVenue.address.trim();
+      venueBrideAddr.textContent = addr.startsWith('(') ? addr : `(${addr})`;
     }
 
-    const mapBtn = document.getElementById('invitation-map-btn');
-    if (mapBtn && cfg.venue.mapUrl) mapBtn.href = cfg.venue.mapUrl;
+    const venueBrideDate = document.getElementById('invitation-bride-datetime');
+    if (venueBrideDate) {
+      const timeText = brideVenue.time || (cfg.dateDisplay && cfg.dateDisplay.fullDateText);
+      if (timeText) venueBrideDate.textContent = timeText;
+    }
+
+    const mapBrideBtn = document.getElementById('invitation-bride-map-btn');
+    if (mapBrideBtn && brideVenue.mapUrl) mapBrideBtn.href = brideVenue.mapUrl;
+  }
+
+  // 3.2 Nhà Trai (Bên phải)
+  const groomVenue = cfg.venueGroom || cfg.venue;
+  if (groomVenue) {
+    const venueGroomName = document.getElementById('invitation-groom-venue-name') || document.getElementById('invitation-venue-name');
+    if (venueGroomName && groomVenue.name) venueGroomName.textContent = groomVenue.name;
+
+    const venueGroomAddr = document.getElementById('invitation-groom-venue-address') || document.getElementById('invitation-venue-address');
+    if (venueGroomAddr && groomVenue.address) {
+      const addr = groomVenue.address.trim();
+      venueGroomAddr.textContent = addr.startsWith('(') ? addr : `(${addr})`;
+    }
+
+    const venueGroomDate = document.getElementById('invitation-groom-datetime') || document.getElementById('invitation-datetime');
+    if (venueGroomDate) {
+      const timeText = groomVenue.time || (cfg.dateDisplay && cfg.dateDisplay.fullDateText);
+      if (timeText) venueGroomDate.textContent = timeText;
+    }
+
+    const mapGroomBtn = document.getElementById('invitation-groom-map-btn') || document.getElementById('invitation-map-btn');
+    if (mapGroomBtn && groomVenue.mapUrl) mapGroomBtn.href = groomVenue.mapUrl;
   }
 
   // 4. LỊCH TRÌNH TIỆC (TIMELINE)

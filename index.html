@@ -63,7 +63,7 @@
          ==================================================================== -->
     <section class="section-countdown torn-paper reveal-on-scroll reveal-up" id="countdown">
       <div class="countdown-wrapper">
-        <h2 class="countdown-title font-script">Our wedding day</h2>
+        <h2 class="countdown-title font-script">Đám cưới của chúng mình</h2>
         <div class="countdown-timer">
           <div class="timer-item reveal-on-scroll reveal-pop delay-1">
             <div class="timer-number" id="cd-days">00</div>
@@ -95,9 +95,9 @@
       <div class="save-date-card reveal-on-scroll reveal-up" id="save-date-card" style="background-image: linear-gradient(140deg, rgba(15, 25, 18, 0.72) 0%, rgba(15, 25, 18, 0.48) 45%, rgba(15, 25, 18, 0.75) 100%), url('assets/root_images/DRN00690.JPG');">
         <div class="save-date-header reveal-on-scroll reveal-left delay-1">
           <h2 class="save-date-title">
-            <span class="std-word word-save">Save</span>
-            <span class="std-word word-the">The</span>
-            <span class="std-word word-date">Date</span>
+            <span class="std-word word-save">Quyết định</span>
+            <!-- <span class="std-word word-the">Bên nhau trọn đời</span> -->
+            <span class="std-word word-date">Bên nhau trọn đời</span>
           </h2>
           <div class="save-date-badge calendar-badge">
             <div class="cal-inner">
@@ -163,7 +163,7 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 4: THƯ MỜI TIỆC CƯỚI (Tờ giấy nổi trên nền hoa Magnolia)
+         SECTION 4: THƯ MỜI TIỆC CƯỚI (Chung đầu & cuối - Giữa chia Nhà Gái & Nhà Trai)
          ==================================================================== -->
     <section class="section-invitation reveal-on-scroll reveal-up" id="invitation">
       <!-- Nền hoa Magnolia (Background Layer) -->
@@ -174,25 +174,57 @@
 
       <!-- Tờ giấy thư mời nổi ở phía trên (Floating Paper Sheet) -->
       <div class="invitation-paper-sheet torn-paper">
+        <!-- 1. PHẦN ĐẦU CHUNG -->
         <p class="invitation-intro reveal-on-scroll reveal-up delay-1">
           TRÂN TRỌNG KÍNH MỜI QUÝ KHÁCH<br>
           ĐẾN CHUNG VUI CÙNG GIA ĐÌNH CHÚNG TÔI TẠI
         </p>
 
-        <h1 class="venue-name font-serif reveal-on-scroll reveal-scale delay-2" id="invitation-venue-name">TẠI TƯ GIA NHÀ TRAI</h1>
-        <p class="venue-address reveal-on-scroll reveal-up delay-2" id="invitation-venue-address">(Xã Bình Thanh - Tỉnh Hưng Yên)</p>
+        <!-- 2. PHẦN GIỮA: CHIA ĐÔI (Nhà Trai bên trái, Nhà Gái bên phải) -->
+        <div class="invitation-venues-grid">
+          <!-- Cột bên trái: Nhà Trai -->
+          <div class="invitation-venue-col venue-col-groom reveal-on-scroll reveal-left delay-2">
+            <span class="venue-side-tag groom-tag">NHÀ TRAI</span>
 
-        <div class="invitation-datetime font-serif reveal-on-scroll reveal-up delay-3" id="invitation-datetime">
-          14:00 | CHỦ NHẬT | 29.11.2026
+            <h2 class="venue-name font-serif" id="invitation-groom-venue-name">TƯ GIA NHÀ TRAI</h2>
+            <p class="venue-address" id="invitation-groom-venue-address">(Xã Bình Thanh - Tỉnh Hưng Yên)</p>
+
+            <div class="invitation-datetime font-serif" id="invitation-groom-datetime">
+              14:00 | CHỦ NHẬT | 29.11.2026
+            </div>
+
+            <a href="https://maps.app.goo.gl/v3dikxQMnXr4cf4JA" target="_blank" rel="noopener" class="btn-map" id="invitation-groom-map-btn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span>CHỈ ĐƯỜNG</span>
+            </a>
+          </div>
+
+          <!-- Vạch ngăn cách dọc tinh tế giữa 2 nhà -->
+          <div class="invitation-venue-divider" aria-hidden="true"></div>
+
+          <!-- Cột bên phải: Nhà Gái -->
+          <div class="invitation-venue-col venue-col-bride reveal-on-scroll reveal-right delay-2">
+            <span class="venue-side-tag bride-tag">NHÀ GÁI</span>
+
+            <h2 class="venue-name font-serif" id="invitation-bride-venue-name">TƯ GIA NHÀ GÁI</h2>
+            <p class="venue-address" id="invitation-bride-venue-address">(Xã Bình Thanh - Tỉnh Hưng Yên)</p>
+
+            <div class="invitation-datetime font-serif" id="invitation-bride-datetime">
+              09:00 | CHỦ NHẬT | 29.11.2026
+            </div>
+
+            <a href="https://maps.app.goo.gl/v3dikxQMnXr4cf4JA" target="_blank" rel="noopener" class="btn-map" id="invitation-bride-map-btn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span>CHỈ ĐƯỜNG</span>
+            </a>
+          </div>
         </div>
 
-        <a href="https://maps.app.goo.gl/v3dikxQMnXr4cf4JA" target="_blank" rel="noopener" class="btn-map reveal-on-scroll reveal-up delay-3" id="invitation-map-btn">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-          </svg>
-          <span>CHỈ ĐƯỜNG</span>
-        </a>
-
+        <!-- 3. PHẦN CUỐI CHUNG -->
         <p class="invitation-salute font-script reveal-on-scroll reveal-up delay-3">Rất hân hạnh được đón tiếp !</p>
 
         <div class="song-hy-badge small reveal-on-scroll reveal-pop delay-4">
