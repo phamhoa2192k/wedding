@@ -28,6 +28,10 @@ function initDynamicConfig() {
     if (heroGroom && cfg.groom.name) {
       heroGroom.innerHTML = cfg.groom.name.replace(/\s+/g, '<br>');
     }
+    const heroBottomGroom = document.getElementById('hero-bottom-groom');
+    if (heroBottomGroom && cfg.groom.name) {
+      heroBottomGroom.textContent = cfg.groom.name;
+    }
     const coupleGroom = document.getElementById('couple-groom-name');
     if (coupleGroom && cfg.groom.name) {
       coupleGroom.textContent = cfg.groom.name.toUpperCase();
@@ -49,6 +53,10 @@ function initDynamicConfig() {
     if (heroBride && cfg.bride.name) {
       heroBride.innerHTML = cfg.bride.name.replace(/\s+/g, '<br>');
     }
+    const heroBottomBride = document.getElementById('hero-bottom-bride');
+    if (heroBottomBride && cfg.bride.name) {
+      heroBottomBride.textContent = cfg.bride.name;
+    }
     const coupleBride = document.getElementById('couple-bride-name');
     if (coupleBride && cfg.bride.name) {
       coupleBride.textContent = cfg.bride.name.toUpperCase();
@@ -68,6 +76,11 @@ function initDynamicConfig() {
   // 2. NGÀY & THỜI GIAN HIỂN THỊ
   if (cfg.dateDisplay) {
     const d = cfg.dateDisplay;
+    const heroBottomDate = document.getElementById('hero-bottom-date');
+    if (heroBottomDate && d.day && d.month && d.year) {
+      heroBottomDate.textContent = `${d.day} . ${d.month} . ${d.year}`;
+    }
+
     const heroDay = document.getElementById('hero-diamond-day');
     if (heroDay && d.day) heroDay.textContent = d.day;
     const heroMonth = document.getElementById('hero-diamond-month');

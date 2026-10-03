@@ -2,7 +2,7 @@
    WEDDING INVITATION - STYLESHEET (Mobile First, GitHub Pages Ready)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@400;600;700&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playball&display=swap');
 
 /* --- Reset & Global --- */
 *, *::before, *::after {
@@ -96,7 +96,7 @@ body::before {
 /* --- Container (Mobile-first Frame) --- */
 .wedding-app {
   width: 100%;
-  max-width: 480px;
+  /* max-width: 480px; */
   min-height: 100vh;
   background-color: var(--bg-card);
   box-shadow: var(--shadow-card), 0 0 60px rgba(0, 0, 0, 0.12);
@@ -184,15 +184,15 @@ body::before {
    ========================================================================== */
 .section-hero {
   position: relative;
-  padding: 16px 16px 20px;
+  /* padding: 16px 16px 20px; */
   background-color: var(--bg-card);
 }
 
 .hero-card {
   position: relative;
   width: 100%;
-  height: 520px;
-  border-radius: 28px;
+  height: 630px;
+  /* border-radius: 28px; */
   overflow: hidden;
   box-shadow: var(--shadow-card);
 }
@@ -201,6 +201,7 @@ body::before {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: bottom !important;
   display: block;
 }
 
@@ -222,6 +223,113 @@ body::before {
   border: 1.5px solid rgba(255, 255, 255, 0.65);
   border-radius: 20px;
   pointer-events: none;
+}
+
+/* ==========================================================================
+   HERO BOTTOM OVERLAY (Linear Gradient, Tên Cô Dâu Chú Rể & Ngày Cưới)
+   ========================================================================== */
+.hero-bottom-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 130px 18px 32px;
+  background: linear-gradient(
+    to top,
+    rgba(12, 22, 15, 0.94) 0%,
+    rgba(12, 22, 15, 0.82) 28%,
+    rgba(12, 22, 15, 0.52) 62%,
+    rgba(12, 22, 15, 0.16) 84%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  animation: heroBottomFadeUp 1.3s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-bottom-tagline {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 6px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+.hero-bottom-names {
+  font-family: 'Great Vibes', 'Alex Brush', 'Dancing Script', cursive;
+  font-size: 2.9rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65), 0 0 24px rgba(0, 0, 0, 0.35);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 8px;
+}
+
+.hero-bottom-names .name-groom,
+.hero-bottom-names .name-bride {
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.hero-bottom-names .name-ampersand {
+  font-family: inherit;
+  font-size: 2.6rem;
+  color: #e5c07b;
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.hero-bottom-date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero-bottom-date .date-decor-line {
+  width: 32px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.hero-bottom-date .date-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #fbf9f4;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes heroBottomFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Hero Badge & Names Block */
@@ -2038,6 +2146,34 @@ select.form-control {
   .hero-card {
     height: 700px;
     border-radius: 36px;
+  }
+
+  .hero-bottom-overlay {
+    padding: 160px 32px 42px;
+  }
+
+  .hero-bottom-tagline {
+    font-size: 0.76rem;
+    letter-spacing: 4.5px;
+    margin-bottom: 8px;
+  }
+
+  .hero-bottom-names {
+    font-size: 3.8rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-bottom-names .name-ampersand {
+    font-size: 3.5rem;
+  }
+
+  .hero-bottom-date .date-decor-line {
+    width: 44px;
+  }
+
+  .hero-bottom-date .date-text {
+    font-size: 1.25rem;
+    letter-spacing: 4px;
   }
 
   .hero-border-inset {

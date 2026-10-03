@@ -76,7 +76,7 @@ const WEDDING_CONFIG = {
 
   // 5. ĐƯỜNG DẪN HÌNH ẢNH (Sử dụng toàn bộ bộ ảnh cưới thực tế từ assets/root_images/)
   images: {
-    hero: 'assets/root_images/HNH03761.JPG',
+    hero: 'assets/root_images/HNH03015.JPG',
     saveDateBg: 'assets/root_images/DRN00690.JPG',
     saveDate1: 'assets/root_images/HNH03393.JPG',
     saveDate2: 'assets/root_images/HNH03781.JPG',
