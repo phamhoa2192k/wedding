@@ -108,7 +108,8 @@ body::before {
 
 @font-face {
   font-family: 'Cach Dieu';
-  src: url('/assets/fonts/font-cach-dieu.otf');
+  src: url('/assets/fonts/font-cach-dieu.otf'),
+        url('/wedding/assets/fonts/font-cach-dieu.otf');
 }
 
 /* --- Typography Helpers --- */
