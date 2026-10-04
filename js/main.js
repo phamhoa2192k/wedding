@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initGiftModal();
   initThemeSwitcher();
   initScrollAnimations();
+  if (typeof initSakuraEffect === 'function') {
+    initSakuraEffect();
+  }
 });
+
 
 /* --- Áp dụng cấu hình động từ WEDDING_CONFIG --- */
 function initDynamicConfig() {

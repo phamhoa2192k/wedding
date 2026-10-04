@@ -36,18 +36,18 @@ const WEDDING_CONFIG = {
   // 3. THỜI GIAN VÀ ĐỊA ĐIỂM CƯỚI (Định dạng: YYYY-MM-DDTHH:mm:ss)
   weddingDate: '2026-11-29T14:00:00',
   dateDisplay: {
-    day: '29',
+    day: '28',
     month: '11',
     year: '2026',
     shortYear: '26',
-    fullDateText: '14:00 | CHỦ NHẬT | 29.11.2026'
+    fullDateText: '17:00 | THỨ BẢY | 28.11.2026'
   },
 
   // Địa điểm tiệc Nhà Gái (Bên phải)
   venueBride: {
     name: 'TƯ GIA NHÀ GÁI',
     address: 'Xã Kiến Xương - Tỉnh Hưng Yên',
-    time: '17:30 | THỨ BẢY | 28.11.2026',
+    time: '17:00 | THỨ BẢY | 28.11.2026',
     mapUrl: 'https://maps.app.goo.gl/CfB3AjW6Ad3YDYFQ8'
   },
 
@@ -55,7 +55,7 @@ const WEDDING_CONFIG = {
   venueGroom: {
     name: 'TƯ GIA NHÀ TRAI',
     address: 'Xã Bình Thanh - Tỉnh Hưng Yên',
-    time: '17:30 | THỨ BẢY | 28.11.2026',
+    time: '17:00 | THỨ BẢY | 28.11.2026',
     mapUrl: 'https://maps.app.goo.gl/v3dikxQMnXr4cf4JA'
   },
 
@@ -68,10 +68,10 @@ const WEDDING_CONFIG = {
 
   // 4. LỊCH TRÌNH TIỆC CƯỚI (TIMELINE)
   timeline: [
-    { time: '14:00', title: 'ĐÓN TIẾP KHÁCH MỜI', icon: 'camera' },
-    { time: '14:30', title: 'BẮT ĐẦU LỄ THÀNH HÔN', icon: 'ring' },
-    { time: '15:00', title: 'CHUNG VUI KHAI TIỆC', icon: 'dining' },
-    { time: '16:30', title: 'MINI GAME VÀ KHIÊU VŨ', icon: 'music' }
+    { time: '16:00', title: 'ĐÓN TIẾP KHÁCH MỜI', icon: 'camera' },
+    // { time: '16:30', title: 'CHỤP ẢNH ', icon: 'ring' },
+    { time: '17:00', title: 'CHUNG VUI KHAI TIỆC', icon: 'dining' },
+    { time: '18:30', title: 'THƯỞNG THỨC TIỆC NGỌT, ÂM NHẠC', icon: 'music' }
   ],
 
   // 5. ĐƯỜNG DẪN HÌNH ẢNH (Sử dụng toàn bộ bộ ảnh cưới thực tế từ assets/root_images/)
@@ -115,23 +115,33 @@ const WEDDING_CONFIG = {
   giftBox: {
     enable: true,
     groomBank: {
-      bankName: 'MB Bank',
-      accountNumber: '0987654321',
+      bankName: 'TP Bank',
+      accountNumber: '90816962689',
       accountName: 'PHAM DUC HOA',
-      qrImage: 'https://api.vietqr.io/image/970422-0987654321-compact2.png?amount=0&addInfo=Mung%20cuoi%20Duc%20Hoa&accountName=PHAM%20DUC%20HOA'
+      qrImage: 'https://api.vietqr.io/image/TPB-90816962689-compact2.png?accountName=PHAM%20DUC%20HOA'
     },
-    brideBank: {
-      bankName: 'Vietcombank',
-      accountNumber: '1234567890',
-      accountName: 'BUI THI KHANH HUYEN',
-      qrImage: 'https://api.vietqr.io/image/970436-1234567890-compact2.png?amount=0&addInfo=Mung%20cuoi%20Khanh%20Huyen&accountName=BUI%20THI%20KHANH%20HUYEN'
-    }
+    // brideBank: {
+    //   bankName: 'Vietcombank',
+    //   accountNumber: '1234567890',
+    //   accountName: 'BUI THI KHANH HUYEN',
+    //   qrImage: 'https://api.vietqr.io/image/970436-1234567890-compact2.png?amount=0&addInfo=Mung%20cuoi%20Khanh%20Huyen&accountName=BUI%20THI%20KHANH%20HUYEN'
+    // }
   },
 
   // 8. CẤU HÌNH LƯU XÁC NHẬN THAM DỰ (RSVP -> GOOGLE SHEETS)
   // Dán link Web App (Google Apps Script) vào đây để tự động ghi danh sách khách vào Google Sheet
   rsvp: {
     googleSheetScriptUrl: 'https://script.google.com/macros/s/AKfycbxXWSlf_0ODsiOYpZ0nmd85YXBNxkEX9zmz_YGnmfEPyIaPbTgfHpK4H0NGwvyFnvJm/exec'
+  },
+
+  // 9. HIỆU ỨNG CÁNH HOA ANH ĐÀO RƠI (SAKURA EFFECT TOÀN APP)
+  sakura: {
+    enable: true,           // Bật/tắt hiệu ứng hoa rơi toàn app
+    petalCount: 'auto',     // 'auto' hoặc số lượng cụ thể (mặc định: ~28 mobile, ~50 desktop)
+    windSpeed: 0.7,         // Tốc độ gió thoảng ngang
+    fallSpeed: 1.1,         // Tốc độ rơi nhẹ nhàng
+    interactive: true       // Tương tác bay bổng khi di chuột hoặc vuốt ngón tay
   }
 };
+
   
