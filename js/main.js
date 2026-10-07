@@ -1,9 +1,3 @@
-/**
- * ==========================================================================
- * MAIN WEDDING SCRIPTS
- * ==========================================================================
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initDynamicConfig();
@@ -19,14 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-/* --- Áp dụng cấu hình động từ WEDDING_CONFIG --- */
 function initDynamicConfig() {
   if (typeof WEDDING_CONFIG === 'undefined') return;
 
   const cfg = WEDDING_CONFIG;
 
-  // 1. CÔ DÂU & CHÚ RỂ
   if (cfg.groom) {
     const heroGroom = document.getElementById('hero-groom-name');
     if (heroGroom && cfg.groom.name) {
@@ -77,7 +68,6 @@ function initDynamicConfig() {
     }
   }
 
-  // 2. NGÀY & THỜI GIAN HIỂN THỊ
   if (cfg.dateDisplay) {
     const d = cfg.dateDisplay;
     const heroBottomDate = document.getElementById('hero-bottom-date');
@@ -103,8 +93,6 @@ function initDynamicConfig() {
     if (invDate && d.fullDateText) invDate.textContent = d.fullDateText;
   }
 
-  // 3. ĐỊA ĐIỂM & BẢN ĐỒ (HỖ TRỢ CẢ NHÀ GÁI BÊN TRÁI & NHÀ TRAI BÊN PHẢI)
-  // 3.1 Nhà Gái (Bên trái)
   const brideVenue = cfg.venueBride || cfg.venue;
   if (brideVenue) {
     const venueBrideName = document.getElementById('invitation-bride-venue-name');
@@ -126,7 +114,6 @@ function initDynamicConfig() {
     if (mapBrideBtn && brideVenue.mapUrl) mapBrideBtn.href = brideVenue.mapUrl;
   }
 
-  // 3.2 Nhà Trai (Bên phải)
   const groomVenue = cfg.venueGroom || cfg.venue;
   if (groomVenue) {
     const venueGroomName = document.getElementById('invitation-groom-venue-name') || document.getElementById('invitation-venue-name');
@@ -148,7 +135,6 @@ function initDynamicConfig() {
     if (mapGroomBtn && groomVenue.mapUrl) mapGroomBtn.href = groomVenue.mapUrl;
   }
 
-  // 4. LỊCH TRÌNH TIỆC (TIMELINE)
   if (Array.isArray(cfg.timeline) && cfg.timeline.length > 0) {
     const timelineContainer = document.getElementById('timeline-items');
     if (timelineContainer) {
@@ -182,7 +168,6 @@ function initDynamicConfig() {
     }
   }
 
-  // 5. HÌNH ẢNH
   if (cfg.images) {
     const heroImg = document.getElementById('hero-img');
     if (heroImg && cfg.images.hero) heroImg.src = cfg.images.hero;
@@ -217,7 +202,6 @@ function initDynamicConfig() {
     }
   }
 
-  // 6. TIỆN ÍCH MỪNG CƯỚI (GIFT BOX & VIETQR)
   if (cfg.giftBox) {
     const giftSection = document.getElementById('gift-section');
     if (giftSection && cfg.giftBox.enable === false) {
@@ -249,7 +233,6 @@ function initDynamicConfig() {
     }
   }
 
-  // 7. NHẠC NỀN
   if (cfg.music) {
     const musicBtn = document.getElementById('floating-music-btn');
     if (musicBtn && cfg.music.enable === false) {
@@ -258,10 +241,8 @@ function initDynamicConfig() {
   }
 }
 
-/* --- 1. Khởi tạo & Quản lý Theme --- */
 function initTheme() {
-  // Ưu tiên theme đã lưu trong localStorage (khi user thử theme bằng widget),
-  // Nếu chưa có thì lấy theo WEDDING_CONFIG.theme
+
   const savedTheme = localStorage.getItem('wedding_active_theme');
   const activeTheme = savedTheme || WEDDING_CONFIG.theme || 'green';
   applyTheme(activeTheme);
@@ -271,13 +252,11 @@ function applyTheme(themeName) {
   document.documentElement.setAttribute('data-theme', themeName);
   localStorage.setItem('wedding_active_theme', themeName);
 
-  // Cập nhật trạng thái active trên popup theme switcher nếu có
   document.querySelectorAll('.theme-opt-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.theme === themeName);
   });
 }
 
-/* --- 2. Đồng hồ đếm ngược (Countdown Timer) --- */
 function initCountdown() {
   const targetDate = new Date(WEDDING_CONFIG.weddingDate).getTime();
   const elDays = document.getElementById('cd-days');
@@ -314,7 +293,6 @@ function initCountdown() {
   setInterval(updateTimer, 1000);
 }
 
-/* --- 3. Trình phát nhạc nền (Music Player) --- */
 function initMusicPlayer() {
   const musicBtn = document.getElementById('floating-music-btn');
   const audio = document.getElementById('bg-audio');
@@ -346,7 +324,6 @@ function initMusicPlayer() {
 
   musicBtn.addEventListener('click', togglePlay);
 
-  // Tự động phát khi người dùng chạm vào trang lần đầu tiên
   const handleFirstInteraction = () => {
     if (!isPlaying) {
       audio.play().then(() => {
@@ -362,7 +339,6 @@ function initMusicPlayer() {
   document.addEventListener('touchstart', handleFirstInteraction, { once: true });
 }
 
-/* --- 4. Lightbox xem ảnh kích thước lớn --- */
 function initGalleryLightbox() {
   const lightbox = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
@@ -372,7 +348,7 @@ function initGalleryLightbox() {
 
   const targetImgs = document.querySelectorAll('.gallery-item img, .couple-photo-box img, .couple-photo-item img, .save-date-item img, .hero-card-img, .story-card-img, .thank-you-img');
   targetImgs.forEach(img => {
-    // img.style.cursor = 'zoom-in';
+
     img.addEventListener('click', () => {
       lightboxImg.src = img.src;
       lightbox.classList.add('active');
@@ -393,14 +369,12 @@ function initGalleryLightbox() {
     });
   }
 
-  // Click vào bất kỳ vị trí nào ngoài bức ảnh thì đóng modal
   lightbox.addEventListener('click', (e) => {
     if (e.target !== lightboxImg) {
       closeLightbox();
     }
   });
 
-  // Hỗ trợ phím Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && lightbox.classList.contains('active')) {
       closeLightbox();
@@ -408,7 +382,6 @@ function initGalleryLightbox() {
   });
 }
 
-/* --- 5. Form xác nhận tham dự (RSVP) --- */
 function initRSVPForm() {
   const form = document.getElementById('rsvp-form');
   if (!form) return;
@@ -449,7 +422,6 @@ function initRSVPForm() {
       guest_of: guestOfText
     };
 
-    // Kiểm tra cấu hình URL Google Sheet trong WEDDING_CONFIG
     const scriptUrl = (typeof WEDDING_CONFIG !== 'undefined' && WEDDING_CONFIG.rsvp && WEDDING_CONFIG.rsvp.googleSheetScriptUrl)
       ? WEDDING_CONFIG.rsvp.googleSheetScriptUrl.trim()
       : '';
@@ -463,7 +435,7 @@ function initRSVPForm() {
 
     try {
       if (scriptUrl) {
-        // Gửi tới Google Apps Script (mode: 'no-cors' để vượt qua CORS redirect từ Google)
+
         await fetch(scriptUrl, {
           method: 'POST',
           mode: 'no-cors',
@@ -477,7 +449,7 @@ function initRSVPForm() {
       form.reset();
     } catch (err) {
       console.error('Lỗi khi gửi RSVP:', err);
-      // Vẫn báo thành công cho khách để không làm gián đoạn trải nghiệm
+
       showToast(`Cảm ơn ${name}! Xác nhận của bạn đã được gửi thành công ❤️`);
       form.reset();
     } finally {
@@ -489,7 +461,6 @@ function initRSVPForm() {
   });
 }
 
-/* --- 6. Hộp mừng cưới & QR Code --- */
 function initGiftModal() {
   const giftBtn = document.getElementById('btn-open-gift');
   const giftModal = document.getElementById('gift-modal');
@@ -545,7 +516,6 @@ function initGiftModal() {
   }
 }
 
-/* --- 7. Theme Switcher Popup (Dành cho việc xem thử màu) --- */
 function initThemeSwitcher() {
   const toggleBtn = document.getElementById('theme-toggle-btn');
   const popup = document.getElementById('theme-palette-popup');
@@ -579,7 +549,6 @@ function initThemeSwitcher() {
   });
 }
 
-/* --- Toast Thông Báo Nhẹ Nhàng --- */
 function showToast(message) {
   let toast = document.getElementById('toast-notice');
   if (!toast) {
@@ -597,16 +566,14 @@ function showToast(message) {
   }, 3500);
 }
 
-/* --- 8. Hiệu ứng Landing Page khi cuộn chuột (Scroll Animations) --- */
 function initScrollAnimations() {
   const animatedElements = document.querySelectorAll('.reveal-on-scroll');
   if (!animatedElements.length) return;
 
-  // Kiểm tra hỗ trợ IntersectionObserver
   if ('IntersectionObserver' in window) {
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -50px 0px', // Kích hoạt sớm hơn 50px trước khi chạm đáy
+      rootMargin: '0px 0px -50px 0px',
       threshold: 0.12
     };
 
@@ -614,7 +581,7 @@ function initScrollAnimations() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          // Sau khi kích hoạt thì ngừng theo dõi phần tử đó để tối ưu hiệu năng
+
           observer.unobserve(entry.target);
         }
       });
@@ -622,8 +589,7 @@ function initScrollAnimations() {
 
     animatedElements.forEach(el => scrollObserver.observe(el));
   } else {
-    // Fallback cho trình duyệt cũ không hỗ trợ IntersectionObserver
+
     animatedElements.forEach(el => el.classList.add('is-visible'));
   }
 }
-

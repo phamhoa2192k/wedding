@@ -1,21 +1,7 @@
-/**
- * ==========================================================================
- * WEDDING CONFIGURATION FILE
- * Bạn có thể dễ dàng thay đổi thông tin, hình ảnh và THEME tại file này.
- * ==========================================================================
- */
-
 const WEDDING_CONFIG = {
-  // 1. CẤU HÌNH THEME TÔNG MÀU
-  // Các tùy chọn có sẵn:
-  // - 'green' : Xanh rêu / Ô liu (mặc định theo bản thiết kế mẫu)
-  // - 'gold'  : Vàng ánh kim / Hoàng gia sang trọng
-  // - 'red'   : Đỏ truyền thống / Rượu vang Á Đông
-  // - 'pink'  : Hồng pastel / Lãng mạn nhẹ nhàng
-  // - 'navy'  : Xanh navy / Quý phái & hiện đại
+
   theme: 'green',
 
-  // 2. THÔNG TIN CÔ DÂU & CHÚ RỂ
   groom: {
     name: 'Đức Hoà',
     fullName: 'Phạm Đức Hoà',
@@ -33,7 +19,6 @@ const WEDDING_CONFIG = {
     }
   },
 
-  // 3. THỜI GIAN VÀ ĐỊA ĐIỂM CƯỚI (Định dạng: YYYY-MM-DDTHH:mm:ss)
   weddingDate: '2026-11-29T14:00:00',
   dateDisplay: {
     day: '28',
@@ -43,7 +28,6 @@ const WEDDING_CONFIG = {
     fullDateText: '17:00 | THỨ BẢY | 28.11.2026'
   },
 
-  // Địa điểm tiệc Nhà Gái (Bên phải)
   venueBride: {
     name: 'TƯ GIA NHÀ GÁI',
     address: 'Xã Kiến Xương - Tỉnh Hưng Yên',
@@ -51,7 +35,6 @@ const WEDDING_CONFIG = {
     mapUrl: 'https://maps.app.goo.gl/CfB3AjW6Ad3YDYFQ8'
   },
 
-  // Địa điểm tiệc Nhà Trai (Bên trái)
   venueGroom: {
     name: 'TƯ GIA NHÀ TRAI',
     address: 'Xã Bình Thanh - Tỉnh Hưng Yên',
@@ -59,22 +42,19 @@ const WEDDING_CONFIG = {
     mapUrl: 'https://maps.app.goo.gl/v3dikxQMnXr4cf4JA'
   },
 
-  // Tương thích cấu hình đơn cũ
   venue: {
     name: 'TẠI TƯ GIA NHÀ TRAI',
     address: 'Xã Bình Thanh - Tỉnh Hưng Yên',
     mapUrl: 'https://maps.app.goo.gl/v3dikxQMnXr4cf4JA'
   },
 
-  // 4. LỊCH TRÌNH TIỆC CƯỚI (TIMELINE)
   timeline: [
     { time: '16:00', title: 'ĐÓN TIẾP KHÁCH MỜI', icon: 'camera' },
-    // { time: '16:30', title: 'CHỤP ẢNH ', icon: 'ring' },
+
     { time: '17:00', title: 'CHUNG VUI KHAI TIỆC', icon: 'dining' },
     { time: '18:30', title: 'THƯỞNG THỨC TIỆC NGỌT, ÂM NHẠC', icon: 'music' }
   ],
 
-  // 5. ĐƯỜNG DẪN HÌNH ẢNH (Sử dụng toàn bộ bộ ảnh cưới thực tế từ assets/root_images/)
   images: {
     hero: 'assets/root_images/HNH03015.jpg',
     saveDateBg: 'assets/root_images/DRN00690.JPG',
@@ -105,13 +85,11 @@ const WEDDING_CONFIG = {
     ]
   },
 
-  // 6. NHẠC NỀN CƯỚI
   music: {
     enable: true,
     audioSrc: 'assets/audio/wedding-song.mp3'
   },
 
-  // 7. THÔNG TIN MỪNG CƯỚI (QR / TÀI KHOẢN NGÂN HÀNG - Tùy chọn)
   giftBox: {
     enable: true,
     groomBank: {
@@ -120,28 +98,18 @@ const WEDDING_CONFIG = {
       accountName: 'PHAM DUC HOA',
       qrImage: 'https://api.vietqr.io/image/TPB-90816962689-compact2.png?accountName=PHAM%20DUC%20HOA'
     },
-    // brideBank: {
-    //   bankName: 'Vietcombank',
-    //   accountNumber: '1234567890',
-    //   accountName: 'BUI THI KHANH HUYEN',
-    //   qrImage: 'https://api.vietqr.io/image/970436-1234567890-compact2.png?amount=0&addInfo=Mung%20cuoi%20Khanh%20Huyen&accountName=BUI%20THI%20KHANH%20HUYEN'
-    // }
+
   },
 
-  // 8. CẤU HÌNH LƯU XÁC NHẬN THAM DỰ (RSVP -> GOOGLE SHEETS)
-  // Dán link Web App (Google Apps Script) vào đây để tự động ghi danh sách khách vào Google Sheet
   rsvp: {
     googleSheetScriptUrl: 'https://script.google.com/macros/s/AKfycbxXWSlf_0ODsiOYpZ0nmd85YXBNxkEX9zmz_YGnmfEPyIaPbTgfHpK4H0NGwvyFnvJm/exec'
   },
 
-  // 9. HIỆU ỨNG CÁNH HOA ANH ĐÀO RƠI (SAKURA EFFECT TOÀN APP)
   sakura: {
-    enable: true,           // Bật/tắt hiệu ứng hoa rơi toàn app
-    petalCount: 'auto',     // 'auto' hoặc số lượng cụ thể (mặc định: ~28 mobile, ~50 desktop)
-    windSpeed: 0.7,         // Tốc độ gió thoảng ngang
-    fallSpeed: 1.1,         // Tốc độ rơi nhẹ nhàng
-    interactive: true       // Tương tác bay bổng khi di chuột hoặc vuốt ngón tay
+    enable: true,
+    petalCount: 'auto',
+    windSpeed: 0.7,
+    fallSpeed: 1.1,
+    interactive: true
   }
 };
-
-  

@@ -1,10 +1,5 @@
-/* ==========================================================================
-   WEDDING INVITATION - STYLESHEET (Mobile First, GitHub Pages Ready)
-   ========================================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@400;600;700&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playball&display=swap');
 
-/* --- Reset & Global --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -25,19 +20,13 @@ img {
   -webkit-user-drag: none;
 }
 
-/* ==========================================================================
-   PHOTO CONTAINER & ASPECT RATIO LOCKS (CỐ ĐỊNH KÍCH THƯỚC MỌI KHUNG ẢNH)
-   Đảm bảo tất cả các ảnh khi thay thế bởi ảnh thật của người dùng (bất kể ngang,
-   dọc, vuông, độ phân giải khác nhau) đều tự động lấp đầy khung hoàn hảo (cover),
-   không bao giờ bị méo mó (distort/stretch), không vỡ layout và giữ nét tối đa.
-   ========================================================================== */
 .hero-card,
 .save-date-item,
 .couple-photo-box,
 .gallery-item {
   position: relative;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.05); /* Placeholder màu nền trong khi chờ ảnh tải */
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .hero-card-img,
@@ -54,7 +43,6 @@ img {
   flex-shrink: 0;
 }
 
-/* Riêng ảnh chân dung Chú rể & Cô dâu: Căn chỉnh vị trí khuôn mặt cô dâu chú rể đẹp nhất */
 .couple-photo-box img {
   object-position: center 20% !important;
 }
@@ -81,22 +69,20 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Background ornament ambient on desktop */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: 
+  background:
     radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.45) 0%, transparent 45%),
     radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.04) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* --- Container (Mobile-first Frame) --- */
 .wedding-app {
   width: 100%;
-  /* max-width: 480px; */
+
   min-height: 100vh;
   background-color: var(--bg-card);
   box-shadow: var(--shadow-card), 0 0 60px rgba(0, 0, 0, 0.12);
@@ -112,7 +98,6 @@ body::before {
         url('/wedding/assets/fonts/font-cach-dieu.otf');
 }
 
-/* --- Typography Helpers --- */
 .font-script {
   font-family:'Cach Dieu', 'Alex Brush', 'Great Vibes', cursive;
   font-weight: 400;
@@ -125,7 +110,6 @@ body::before {
   letter-spacing: 1px;
 }
 
-/* --- Torn Paper Effect --- */
 .torn-paper {
   position: relative;
   background-color: #fbf9f4;
@@ -155,7 +139,6 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 14'%3E%3Cpath fill='%23fbf9f4' d='M0 0 L0 10 Q4 4 7 8 T14 6 Q18 11 21 7 T28 10 L28 0 Z'/%3E%3C/svg%3E");
 }
 
-/* --- Song Hỷ Badge (Double Happiness 囍) --- */
 .song-hy-badge {
   display: inline-flex;
   align-items: center;
@@ -185,12 +168,9 @@ body::before {
   height: 24px;
 }
 
-/* ==========================================================================
-   SECTION 1: HERO (Cover Image, Song Hy, Couple Names, Date Diamond)
-   ========================================================================== */
 .section-hero {
   position: relative;
-  /* padding: 16px 16px 20px; */
+
   background-color: var(--bg-card);
 }
 
@@ -198,7 +178,7 @@ body::before {
   position: relative;
   width: 100%;
   height: 630px;
-  /* border-radius: 28px; */
+
   overflow: hidden;
   box-shadow: var(--shadow-card);
 }
@@ -232,9 +212,6 @@ body::before {
   pointer-events: none;
 }
 
-/* ==========================================================================
-   HERO BOTTOM OVERLAY (Linear Gradient, Tên Cô Dâu Chú Rể & Ngày Cưới)
-   ========================================================================== */
 .hero-bottom-overlay {
   position: absolute;
   left: 0;
@@ -277,7 +254,7 @@ body::before {
 }
 
 .hero-bottom-names {
-  /* font-family: 'Great Vibes', 'Alex Brush', 'Dancing Script', cursive; */
+
   font-size: 2.5rem;
   font-weight: 400;
   color: #ffffff;
@@ -340,7 +317,6 @@ body::before {
   }
 }
 
-/* Hero Badge & Names Block */
 .hero-content-top {
   position: absolute;
   top: 24px;
@@ -382,7 +358,6 @@ body::before {
   display: block;
 }
 
-/* Diamond Date Badges (05 / 10 / 26) */
 .hero-date-diamonds {
   display: flex;
   flex-direction: column;
@@ -419,9 +394,6 @@ body::before {
   letter-spacing: 0.5px;
 }
 
-/* ==========================================================================
-   SECTION 2: COUNTDOWN ("Our wedding day")
-   ========================================================================== */
 .section-countdown {
   padding: 30px 20px 36px;
   margin: 10px 16px 20px;
@@ -478,9 +450,6 @@ body::before {
   opacity: 0.7;
 }
 
-/* ==========================================================================
-   SECTION 3: SAVE THE DATE (Asymmetric photo grid & dark theme card)
-   ========================================================================== */
 .section-save-date {
   padding: 0 16px 24px;
 }
@@ -493,7 +462,7 @@ body::before {
   overflow: hidden;
   color: #ffffff;
   background-color: var(--bg-card-alt);
-  background-image: 
+  background-image:
     linear-gradient(
       140deg,
       rgba(15, 25, 18, 0.72) 0%,
@@ -523,23 +492,21 @@ body::before {
   line-height: 1.05;
 }
 
-/* Chữ Save: Font thư pháp/script, góc trên bên trái */
 .word-save {
   font-family: 'Playwrite CU', 'Great Vibes', cursive;
   font-size: 1.4rem;
   font-weight: 300;
   margin-left: 0;
-  /* letter-spacing: 0.1rem; */
+
 }
 
-/* Chữ Date: Font thư pháp/script cùng font với Save, lệch chéo sâu hơn xuống dưới phải */
 .word-date {
   font-family: 'Playwrite CU', 'Great Vibes', cursive;
   font-size: 1.4rem;
   margin-left: 76px;
   font-weight: 300;
   line-height: 3rem;
-  /* letter-spacing: 0.1rem; */
+
 }
 
 .save-date-badge {
@@ -703,7 +670,6 @@ body::before {
   height: 175px;
 }
 
-/* Floral motif divider */
 .floral-divider {
   display: flex;
   justify-content: center;
@@ -719,16 +685,12 @@ body::before {
   fill: none;
 }
 
-/* ==========================================================================
-   SECTION 4: INVITATION CARD (Chung đầu & cuối, giữa chia Nhà Gái & Nhà Trai)
-   ========================================================================== */
 .section-invitation {
   position: relative;
   padding: 38px 16px 44px;
   overflow: hidden;
 }
 
-/* Nền hoa Magnolia nằm ở lớp dưới (Background Layer) */
 .invitation-magnolia-bg {
   position: absolute;
   inset: 0;
@@ -762,7 +724,6 @@ body::before {
   transform: rotate(172deg) scaleX(-1);
 }
 
-/* Tờ giấy thư mời nổi ở phía trên (Floating Paper Sheet) */
 .invitation-paper-sheet {
   position: relative;
   z-index: 2;
@@ -770,15 +731,14 @@ body::before {
   padding: 42px 14px 36px;
   text-align: center;
   border-radius: 4px;
-  /* Đổ bóng 3D phân tầng tạo cảm giác tờ giấy nổi hẳn trên nền hoa */
-  box-shadow: 
+
+  box-shadow:
     0 2px 5px rgba(0, 0, 0, 0.04),
     0 12px 26px -2px rgba(0, 0, 0, 0.12),
     0 22px 45px -4px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-/* Viền giấy xé đồng màu trắng cho tờ giấy nổi */
 .invitation-paper-sheet.torn-paper {
   background-color: #ffffff;
 }
@@ -793,7 +753,6 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 14'%3E%3Cpath fill='%23ffffff' d='M0 0 L0 10 Q4 4 7 8 T14 6 Q18 11 21 7 T28 10 L28 0 Z'/%3E%3C/svg%3E");
 }
 
-/* 1. Phần mở đầu chung */
 .invitation-intro {
   font-size: 0.78rem;
   font-weight: 600;
@@ -804,7 +763,6 @@ body::before {
   margin-bottom: 22px;
 }
 
-/* 2. Phần giữa: Khung chia đôi Nhà Gái (trái) và Nhà Trai (phải) */
 .invitation-venues-grid {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -824,7 +782,6 @@ body::before {
   margin-top: 0 !important;
 }
 
-/* Vạch ngăn cách giữa 2 bên */
 .invitation-venue-divider {
   width: 1px;
   background: linear-gradient(
@@ -837,7 +794,6 @@ body::before {
   align-self: stretch;
 }
 
-/* Tag nhận diện Nhà Gái / Nhà Trai */
 .venue-side-tag {
   display: inline-block;
   font-size: 0.65rem;
@@ -873,7 +829,7 @@ body::before {
 }
 
 .invitation-datetime {
-  /* font-family: 'Cormorant Garamond', Georgia, serif; */
+
   font-size: 0.92rem;
   font-weight: 600;
   color: var(--text-heading);
@@ -915,9 +871,8 @@ body::before {
   flex-shrink: 0;
 }
 
-/* 3. Phần kết thúc chung */
 .invitation-salute {
-  /* font-family: 'Alex Brush', 'Great Vibes', cursive; */
+
   font-size: 2.8rem;
   color: var(--text-script);
   margin-bottom: 18px;
@@ -929,9 +884,6 @@ body::before {
   height: 44px;
 }
 
-/* ==========================================================================
-   SECTION 5: COUPLE INFO ("Wedding of" - 2 Div riêng biệt, bên trái cao hơn)
-   ========================================================================== */
 .section-couple {
   padding: 10px 16px 32px;
   position: relative;
@@ -945,18 +897,16 @@ body::before {
   align-items: start;
 }
 
-/* Div Chú rể (bên trái): Nằm cao */
 .couple-col-box.col-groom {
   display: flex;
   flex-direction: column;
   margin-top: 0;
 }
 
-/* Div Cô dâu (bên phải): Chênh nhẹ nhàng, mép trên chữ Wedding of ngang tầm mép ảnh chú rể */
 .couple-col-box.col-bride {
   display: flex;
   flex-direction: column;
-  margin-top: -6px; /* Giảm độ chênh lệch cao thấp, tạo độ so le nhẹ nhàng tự nhiên */
+  margin-top: -6px;
 }
 
 .couple-heading {
@@ -969,7 +919,6 @@ body::before {
   padding-right: 4px;
 }
 
-/* Khung chứa ảnh */
 .couple-photo-box {
   width: 100%;
   height: 250px;
@@ -991,7 +940,6 @@ body::before {
   transform: scale(1.04);
 }
 
-/* Phần thông tin tên & cha mẹ */
 .couple-info-block {
   margin-top: 14px;
 }
@@ -1014,7 +962,6 @@ body::before {
   line-height: 1.15;
 }
 
-/* Cột cây gia đình (nhánh cha mẹ) kèm đường chỉ viền và chấm tròn (pin) */
 .family-pillar {
   display: flex;
   align-items: flex-start;
@@ -1071,10 +1018,9 @@ body::before {
   white-space: nowrap;
 }
 
-/* Dấu nối & to nằm thấp xuống dưới cả 2 bức ảnh */
 .couple-center-ampersand {
   position: absolute;
-  top: 280px; /* Thấp ngay dưới đáy cả 2 bức ảnh, nằm vừa vặn giữa 2 phần thông tin */
+  top: 280px;
   left: 45%;
   transform: translate(-50%, 0);
   font-size: 3.8rem;
@@ -1085,9 +1031,6 @@ body::before {
   line-height: 1;
 }
 
-/* ==========================================================================
-   SECTION 6: TIMELINE
-   ========================================================================== */
 .section-timeline {
   margin: 16px 16px 28px;
   padding: 36px 16px 36px;
@@ -1095,7 +1038,7 @@ body::before {
 }
 
 .timeline-heading {
-  /* font-family: 'Alex Brush', 'Great Vibes', cursive; */
+
   font-size: 2.8rem;
   color: var(--text-script);
   margin-bottom: 28px;
@@ -1149,7 +1092,7 @@ body::before {
 }
 
 .timeline-time {
-  /* font-family: 'Cormorant Garamond', Georgia, serif; */
+
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-heading);
@@ -1165,9 +1108,6 @@ body::before {
   line-height: 1.35;
 }
 
-/* ==========================================================================
-   SECTION 7: DRESSCODE
-   ========================================================================== */
 .section-dresscode {
   margin: 0 16px 28px;
   padding: 30px 20px 32px;
@@ -1175,7 +1115,7 @@ body::before {
 }
 
 .dresscode-heading {
-  /* font-family: 'Alex Brush', 'Great Vibes', cursive; */
+
   font-size: 2.8rem;
   color: var(--text-script);
   text-align: right;
@@ -1209,9 +1149,6 @@ body::before {
 .swatch-4 { background-color: var(--dresscode-4); }
 .swatch-5 { background-color: var(--dresscode-5); }
 
-/* ==========================================================================
-   SECTION 8: ALBUM ("Our Memories")
-   ========================================================================== */
 .section-gallery {
   padding: 16px 16px 28px;
 }
@@ -1221,7 +1158,7 @@ body::before {
 }
 
 .gallery-heading {
-  /* font-family: 'Alex Brush', 'Great Vibes', cursive; */
+
   font-size: 2.9rem;
   color: var(--text-script);
   margin-bottom: 12px;
@@ -1236,7 +1173,6 @@ body::before {
   margin-bottom: 28px;
 }
 
-/* Huy hiệu Song Hỷ floating ở góc trên bên phải của ảnh 1 */
 .gallery-floating-songhy {
   position: absolute;
   top: 10px;
@@ -1274,7 +1210,6 @@ body::before {
   width: 100%;
 }
 
-/* Gallery Masonry / Grid */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -1301,7 +1236,6 @@ body::before {
   transform: scale(1.05);
 }
 
-/* Layout matching template 3.jpg & harmonious extension */
 .g-item-1 {
   grid-column: 1 / 5;
   height: 250px;
@@ -1332,7 +1266,6 @@ body::before {
   height: 190px;
 }
 
-/* Hàng kết nối của album kỷ niệm (2 bức ảnh di sản 9 & 10) */
 .g-item-9 {
   grid-column: 1 / 4;
   height: 185px;
@@ -1342,9 +1275,6 @@ body::before {
   height: 185px;
 }
 
-/* ==========================================================================
-   SECTION 9: RSVP FORM
-   ========================================================================== */
 .section-rsvp {
   margin: 16px 16px 36px;
   padding: 32px 20px 36px;
@@ -1430,9 +1360,6 @@ select.form-control {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
 }
 
-/* ==========================================================================
-   SECTION 10: GIFT / BANK MODAL (Mừng cưới QR)
-   ========================================================================== */
 .section-gift {
   text-align: center;
   padding: 0 16px 20px;
@@ -1465,9 +1392,6 @@ select.form-control {
   fill: currentColor;
 }
 
-/* ==========================================================================
-   SECTION: STORY QUOTE BANNER
-   ========================================================================== */
 .section-story-banner {
   padding: 0 16px 28px;
 }
@@ -1541,9 +1465,6 @@ select.form-control {
   opacity: 0.85;
 }
 
-/* ==========================================================================
-   SECTION 11: THANK YOU CARD
-   ========================================================================== */
 .section-thank-you {
   padding: 0 16px 28px;
 }
@@ -1626,10 +1547,6 @@ select.form-control {
   margin-top: 2px;
 }
 
-/* ==========================================================================
-   FLOATING WIDGETS (Music Player & Theme Switcher)
-   ========================================================================== */
-/* Music Player Floating Button */
 .floating-music-btn {
   position: fixed;
   bottom: 24px;
@@ -1662,7 +1579,6 @@ select.form-control {
   to { transform: rotate(360deg); }
 }
 
-/* Theme Switcher Widget */
 .floating-theme-widget {
   position: fixed;
   bottom: 24px;
@@ -1750,9 +1666,6 @@ select.form-control {
   line-height: 1.35;
 }
 
-/* ==========================================================================
-   MODALS (Lightbox & Gift QR)
-   ========================================================================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1798,9 +1711,8 @@ select.form-control {
   justify-content: center;
 }
 
-/* Lightbox Modal */
 .lightbox-modal {
-  /* cursor: zoom-out; */
+
   padding: 16px;
 }
 
@@ -1864,7 +1776,6 @@ select.form-control {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Success notification toast */
 .toast-notice {
   position: fixed;
   top: 24px;
@@ -1886,9 +1797,6 @@ select.form-control {
   transform: translateX(-50%) translateY(0);
 }
 
-/* ==========================================================================
-   LANDING PAGE SCROLL ANIMATIONS (IntersectionObserver Reveal)
-   ========================================================================== */
 .reveal-on-scroll {
   opacity: 0;
   will-change: transform, opacity;
@@ -1921,13 +1829,11 @@ select.form-control {
   transform: scale(0.8) translateY(15px);
 }
 
-/* Khi phần tử cuộn vào tầm nhìn (active) */
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translate(0, 0) scale(1);
 }
 
-/* Stagger Delays để tạo hiệu ứng nối tiếp mượt mà */
 .delay-1 { transition-delay: 0.15s; }
 .delay-2 { transition-delay: 0.30s; }
 .delay-3 { transition-delay: 0.45s; }
@@ -1937,7 +1843,6 @@ select.form-control {
 .delay-7 { transition-delay: 1.05s; }
 .delay-8 { transition-delay: 1.20s; }
 
-/* Hiệu ứng ban đầu của phần Hero khi vừa tải trang - Chậm và êm ái hơn */
 .hero-card {
   animation: heroCardIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
@@ -1960,7 +1865,6 @@ select.form-control {
   animation: popDiamondIn 1s 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
-/* Keyframe animations */
 @keyframes heroCardIn {
   from {
     opacity: 0;
@@ -1994,7 +1898,6 @@ select.form-control {
   }
 }
 
-/* Giữ nguyên góc xoay 45deg cho hình quả trám trong suốt quá trình animate */
 @keyframes popDiamondIn {
   from {
     opacity: 0;
@@ -2006,7 +1909,6 @@ select.form-control {
   }
 }
 
-/* Hiệu ứng rung nhẹ / nhịp đập tinh tế cho nút Chỉ đường */
 .btn-map {
   position: relative;
   overflow: hidden;
@@ -2034,7 +1936,6 @@ select.form-control {
   40%, 100% { transform: rotate(30deg) translateX(150%); }
 }
 
-/* Hiệu ứng nhịp đập nhẹ nhàng cho huy hiệu Song Hỷ */
 .song-hy-badge {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -2044,12 +1945,6 @@ select.form-control {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* ==========================================================================
-   DESKTOP & TABLET RESPONSIVE ENHANCEMENTS
-   Hiển thị khung to hơn, typography rõ nét và bố cục sang trọng trên máy tính
-   ========================================================================== */
-
-/* 1. Màn hình Tablet & Laptop nhỏ (>= 768px) */
 @media (min-width: 768px) {
   html {
     font-size: 17px;
@@ -2124,7 +2019,6 @@ select.form-control {
   .g-item-7, .g-item-8 { height: 230px; }
 }
 
-/* 2. Màn hình Desktop Tiêu Chuẩn (>= 1024px) */
 @media (min-width: 1024px) {
   html {
     font-size: 18px;
@@ -2303,7 +2197,7 @@ select.form-control {
 
   .invitation-paper-sheet {
     padding: 52px 34px 44px;
-    box-shadow: 
+    box-shadow:
       0 4px 8px rgba(0, 0, 0, 0.04),
       0 14px 32px -2px rgba(0, 0, 0, 0.13),
       0 26px 54px -4px rgba(0, 0, 0, 0.09);
@@ -2490,7 +2384,6 @@ select.form-control {
     font-size: 1.05rem;
   }
 
-  /* Floating controls rộng hơn & dễ thao tác */
   .floating-music-btn {
     width: 54px;
     height: 54px;
@@ -2509,7 +2402,6 @@ select.form-control {
   }
 }
 
-/* 3. Màn hình Desktop Lớn (>= 1440px) */
 @media (min-width: 1440px) {
   .wedding-app {
     max-width: 780px;
@@ -2557,10 +2449,6 @@ select.form-control {
   .thank-you-card { height: 580px; }
 }
 
-/* ==========================================================================
-   SAKURA FALLING CANVAS EFFECT
-   Hiệu ứng cánh hoa anh đào rơi toàn trang (không che cản thao tác người dùng)
-   ========================================================================== */
 #sakura-canvas {
   position: fixed;
   top: 0;
@@ -2575,5 +2463,3 @@ select.form-control {
   -webkit-user-select: none;
   overflow: hidden;
 }
-
-
