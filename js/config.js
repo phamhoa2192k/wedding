@@ -57,7 +57,6 @@ const WEDDING_CONFIG = {
 
   images: {
     hero: 'assets/root_images/HNH03015.jpg',
-    saveDateBg: 'assets/root_images/DRN00690.JPG',
     saveDate1: 'assets/root_images/HNH03393.JPG',
     saveDate2: 'assets/root_images/HNH03781.JPG',
     saveDate3: 'assets/root_images/DRN00773.jpg',
@@ -82,8 +81,8 @@ const WEDDING_CONFIG = {
       'assets/root_images/HNH03428.jpg',
 
       'assets/root_images/HNH03545.jpg',
-      'assets/root_images/HNH00152.JPG',
-      'assets/root_images/HNH00222.JPG'
+      'assets/root_images/HNH03792.jpg',
+      'assets/root_images/HNH02590.jpg'
     ]
   },
 

@@ -196,9 +196,8 @@
       </div>
     </section>
 
-    <!-- <section class="section-save-date" id="save-the-date">
-      <div class="save-date-card reveal-on-scroll reveal-up" id="save-date-card"
-        style="background-image: linear-gradient(140deg, rgba(15, 25, 18, 0.72) 0%, rgba(15, 25, 18, 0.48) 45%, rgba(15, 25, 18, 0.75) 100%), url('assets/root_images/DRN00690.JPG');">
+    <section class="section-save-date" id="save-the-date">
+      <div class="save-date-card reveal-on-scroll reveal-up" id="save-date-card">
         <div class="save-date-header reveal-on-scroll reveal-left delay-1">
           <h2 class="save-date-title">
             <span class="std-word word-save font-script">Quyết định</span>
@@ -208,38 +207,43 @@
 
         </div>
 
-        <div class="save-date-grid">
+        <div class="std-carousel reveal-on-scroll reveal-up delay-2" id="std-carousel">
+          <div class="std-stage">
+            <div class="std-track" id="std-track">
+              <div class="save-date-item std-slide">
+                <img src="assets/root_images/HNH03393.JPG" id="save-date-img-1" alt="Save the date 1">
+              </div>
+              <div class="save-date-item std-slide">
+                <img src="assets/root_images/HNH03781.JPG" id="save-date-img-2" alt="Save the date 2">
+              </div>
+              <div class="save-date-item std-slide">
+                <img src="assets/root_images/DRN00773.jpg" id="save-date-img-3" alt="Save the date 3" loading="lazy">
+              </div>
+              <div class="save-date-item std-slide">
+                <img src="assets/root_images/HNH02448.JPG" id="save-date-img-4" alt="Save the date 4" loading="lazy">
+              </div>
+              <div class="save-date-item std-slide">
+                <img src="assets/root_images/HNH02441.JPG" id="save-date-img-5" alt="Save the date 5" loading="lazy">
+              </div>
+              <div class="save-date-item std-slide">
+                <img src="assets/root_images/HNH02772.JPG" id="save-date-img-6" alt="Save the date 6" loading="lazy">
+              </div>
+              <div class="save-date-item std-slide">
+                <img src="assets/root_images/HNH03834.JPG" id="save-date-img-7" alt="Save the date 7" loading="lazy">
+              </div>
+              <div class="save-date-item std-slide">
+                <img src="assets/root_images/HNH02755.JPG" id="save-date-img-8" alt="Save the date 8" loading="lazy">
+              </div>
+              <div class="save-date-item std-slide">
+                <img src="assets/root_images/HNH02915.JPG" id="save-date-img-9" alt="Save the date 9" loading="lazy">
+              </div>
+            </div>
 
-          <div class="save-date-item tall reveal-on-scroll reveal-scale delay-1">
-            <img src="assets/root_images/HNH03393.JPG" id="save-date-img-1" alt="Save the date" loading="lazy">
-          </div>
-          <div class="save-date-item sq1 reveal-on-scroll reveal-right delay-2">
-            <img src="assets/root_images/HNH03781.JPG" id="save-date-img-2" alt="Save the date" loading="lazy">
-          </div>
-          <div class="save-date-item sq2 reveal-on-scroll reveal-right delay-3">
-            <img src="assets/root_images/DRN00773.jpg" id="save-date-img-3" alt="Save the date" loading="lazy">
+            <button type="button" class="std-nav std-prev" id="std-prev" aria-label="Ảnh trước"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8" /></svg></button>
+            <button type="button" class="std-nav std-next" id="std-next" aria-label="Ảnh tiếp theo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" /></svg></button>
           </div>
 
-          <div class="save-date-item wide reveal-on-scroll reveal-scale delay-2">
-            <img src="assets/root_images/HNH02448.JPG" id="save-date-img-4" alt="Save the date" loading="lazy">
-          </div>
-
-          <div class="save-date-item tall-left reveal-on-scroll reveal-scale delay-1">
-            <img src="assets/root_images/HNH02441.JPG" id="save-date-img-5" alt="Save the date" loading="lazy">
-          </div>
-          <div class="save-date-item sq3 reveal-on-scroll reveal-left delay-2">
-            <img src="assets/root_images/HNH02772.JPG" id="save-date-img-6" alt="Save the date" loading="lazy">
-          </div>
-          <div class="save-date-item sq4 reveal-on-scroll reveal-left delay-3">
-            <img src="assets/root_images/HNH03834.JPG" id="save-date-img-7" alt="Save the date" loading="lazy">
-          </div>
-
-          <div class="save-date-item duo1 reveal-on-scroll reveal-up delay-2">
-            <img src="assets/root_images/HNH02755.JPG" id="save-date-img-8" alt="Save the date" loading="lazy">
-          </div>
-          <div class="save-date-item duo2 reveal-on-scroll reveal-up delay-3">
-            <img src="assets/root_images/HNH02915.JPG" id="save-date-img-9" alt="Save the date" loading="lazy">
-          </div>
+          <div class="std-thumbs" id="std-thumbs"></div>
         </div>
       </div>
 
@@ -250,7 +254,7 @@
           <path d="M90 25 C90 15, 110 15, 110 25 C110 35, 90 35, 90 25 Z" stroke-width="1" />
         </svg>
       </div>
-    </section> -->
+    </section>
 
     <!-- <section class="section-gallery" id="gallery">
       <div class="gallery-paper-card torn-paper reveal-on-scroll reveal-up">
@@ -298,10 +302,10 @@
             <img src="assets/root_images/HNH00291.JPG" id="gallery-img-8" alt="Wedding Memory 8" loading="lazy">
           </div>
           <div class="gallery-item g-item-9 reveal-on-scroll reveal-scale delay-2">
-            <img src="assets/root_images/HNH00152.JPG" id="gallery-img-9" alt="Wedding Memory 9" loading="lazy">
+            <img src="assets/root_images/HNH03792.jpg" id="gallery-img-9" alt="Wedding Memory 9" loading="lazy">
           </div>
           <div class="gallery-item g-item-10 reveal-on-scroll reveal-scale delay-3">
-            <img src="assets/root_images/HNH00222.JPG" id="gallery-img-10" alt="Wedding Memory 10" loading="lazy">
+            <img src="assets/root_images/HNH02590.jpg" id="gallery-img-10" alt="Wedding Memory 10" loading="lazy">
           </div>
         </div>
       </div>
@@ -364,7 +368,7 @@
     </section>
 
     <section class="section-gallery" id="gallery">
-      <div class="gallery-paper-card torn-paper reveal-on-scroll reveal-up">
+      <div class="gallery-paper-card reveal-on-scroll reveal-up" id="gallery-card">
         <h2 class="gallery-heading font-script reveal-on-scroll reveal-up">Our Memories</h2>
         <p class="gallery-quote reveal-on-scroll reveal-up delay-1">
           Mỗi trang album là một chương nhỏ của câu chuyện tình yêu,<br>
@@ -409,10 +413,10 @@
             <img src="assets/root_images/HNH00291.JPG" id="gallery-img-8" alt="Wedding Memory 8" loading="lazy">
           </div>
           <div class="gallery-item g-item-9 reveal-on-scroll reveal-scale delay-2">
-            <img src="assets/root_images/HNH00152.JPG" id="gallery-img-9" alt="Wedding Memory 9" loading="lazy">
+            <img src="assets/root_images/HNH03792.jpg" id="gallery-img-9" alt="Wedding Memory 9" loading="lazy">
           </div>
           <div class="gallery-item g-item-10 reveal-on-scroll reveal-scale delay-3">
-            <img src="assets/root_images/HNH00222.JPG" id="gallery-img-10" alt="Wedding Memory 10" loading="lazy">
+            <img src="assets/root_images/HNH02590.jpg" id="gallery-img-10" alt="Wedding Memory 10" loading="lazy">
           </div>
         </div>
       </div>
