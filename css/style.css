@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@400;600;700&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playball&display=swap');
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -95,11 +97,11 @@ body::before {
 @font-face {
   font-family: 'Cach Dieu';
   src: url('/assets/fonts/font-cach-dieu.otf'),
-        url('/wedding/assets/fonts/font-cach-dieu.otf');
+    url('/wedding/assets/fonts/font-cach-dieu.otf');
 }
 
 .font-script {
-  font-family:'Cach Dieu', 'Alex Brush', 'Great Vibes', cursive;
+  font-family: 'Cach Dieu', 'Alex Brush', 'Great Vibes', cursive;
   font-weight: 400;
   color: var(--text-script);
 }
@@ -163,6 +165,7 @@ body::before {
   width: 38px;
   height: 38px;
 }
+
 .song-hy-badge.small svg {
   width: 24px;
   height: 24px;
@@ -195,12 +198,10 @@ body::before {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.05) 40%,
-    rgba(0, 0, 0, 0.35) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.05) 40%,
+      rgba(0, 0, 0, 0.35) 100%);
   pointer-events: none;
 }
 
@@ -218,14 +219,12 @@ body::before {
   right: 0;
   bottom: 0;
   padding: 130px 18px 32px;
-  background: linear-gradient(
-    to top,
-    rgba(12, 22, 15, 0.94) 0%,
-    rgba(12, 22, 15, 0.82) 28%,
-    rgba(12, 22, 15, 0.52) 62%,
-    rgba(12, 22, 15, 0.16) 84%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(12, 22, 15, 0.94) 0%,
+      rgba(12, 22, 15, 0.82) 28%,
+      rgba(12, 22, 15, 0.52) 62%,
+      rgba(12, 22, 15, 0.16) 84%,
+      transparent 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -311,6 +310,7 @@ body::before {
     opacity: 0;
     transform: translateY(22px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -396,7 +396,7 @@ body::before {
 
 .section-countdown {
   padding: 30px 20px 36px;
-  margin: 10px 16px 20px;
+  margin: 50px 16px 50px;
 }
 
 .countdown-wrapper {
@@ -463,12 +463,10 @@ body::before {
   color: #ffffff;
   background-color: var(--bg-card-alt);
   background-image:
-    linear-gradient(
-      140deg,
+    linear-gradient(140deg,
       rgba(15, 25, 18, 0.72) 0%,
       rgba(15, 25, 18, 0.48) 45%,
-      rgba(15, 25, 18, 0.75) 100%
-    ),
+      rgba(15, 25, 18, 0.75) 100%),
     url('../assets/root_images/DRN00690.JPG');
   background-size: cover;
   background-position: center;
@@ -784,13 +782,11 @@ body::before {
 
 .invitation-venue-divider {
   width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--border-color, rgba(0, 0, 0, 0.12)) 15%,
-    var(--border-color, rgba(0, 0, 0, 0.12)) 85%,
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      transparent,
+      var(--border-color, rgba(0, 0, 0, 0.12)) 15%,
+      var(--border-color, rgba(0, 0, 0, 0.12)) 85%,
+      transparent);
   align-self: stretch;
 }
 
@@ -1143,11 +1139,26 @@ body::before {
   transform: translateY(-4px);
 }
 
-.swatch-1 { background-color: var(--dresscode-1); border: 1.5px solid #dcd7ca; }
-.swatch-2 { background-color: var(--dresscode-2); }
-.swatch-3 { background-color: var(--dresscode-3); }
-.swatch-4 { background-color: var(--dresscode-4); }
-.swatch-5 { background-color: var(--dresscode-5); }
+.swatch-1 {
+  background-color: var(--dresscode-1);
+  border: 1.5px solid #dcd7ca;
+}
+
+.swatch-2 {
+  background-color: var(--dresscode-2);
+}
+
+.swatch-3 {
+  background-color: var(--dresscode-3);
+}
+
+.swatch-4 {
+  background-color: var(--dresscode-4);
+}
+
+.swatch-5 {
+  background-color: var(--dresscode-5);
+}
 
 .section-gallery {
   padding: 16px 16px 28px;
@@ -1241,28 +1252,38 @@ body::before {
   height: 250px;
   position: relative;
 }
+
 .g-item-3 {
   grid-column: 1 / 3;
   height: 150px;
 }
+
 .g-item-4 {
   grid-column: 3 / 5;
   height: 150px;
 }
+
+.g-item-4>img {
+  transform: scale(2) translateY(-20px) translateX(-5px);
+}
+
 .g-item-5 {
   grid-column: 5 / 7;
   height: 150px;
 }
+
 .g-item-6 {
   grid-column: 1 / 7;
   height: 170px;
 }
+
 .g-item-7 {
-  grid-column: 1 / 3;
-  height: 190px;
+  grid-column: 1 / 4;
+  height: 380px;
 }
+
 .g-item-8 {
-  grid-column: 3 / 7;
+  grid-column: 4 / 7;
   height: 190px;
 }
 
@@ -1270,6 +1291,7 @@ body::before {
   grid-column: 1 / 4;
   height: 185px;
 }
+
 .g-item-10 {
   grid-column: 4 / 7;
   height: 185px;
@@ -1420,12 +1442,10 @@ select.form-control {
 .story-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(15, 25, 18, 0.45) 50%,
-    rgba(15, 25, 18, 0.8) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(15, 25, 18, 0.45) 50%,
+      rgba(15, 25, 18, 0.8) 100%);
   pointer-events: none;
 }
 
@@ -1493,12 +1513,10 @@ select.form-control {
 .thank-you-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.35) 45%,
-    rgba(15, 25, 18, 0.85) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.35) 45%,
+      rgba(15, 25, 18, 0.85) 100%);
   pointer-events: none;
 }
 
@@ -1575,8 +1593,13 @@ select.form-control {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .floating-theme-widget {
@@ -1654,11 +1677,25 @@ select.form-control {
   border-color: #333333;
 }
 
-.theme-opt-green { background: #4a5a35; }
-.theme-opt-gold  { background: #92753a; }
-.theme-opt-red   { background: #8c262a; }
-.theme-opt-pink  { background: #9c5965; }
-.theme-opt-navy  { background: #27415e; }
+.theme-opt-green {
+  background: #4a5a35;
+}
+
+.theme-opt-gold {
+  background: #92753a;
+}
+
+.theme-opt-red {
+  background: #8c262a;
+}
+
+.theme-opt-pink {
+  background: #9c5965;
+}
+
+.theme-opt-navy {
+  background: #27415e;
+}
 
 .theme-hint {
   font-size: 0.68rem;
@@ -1772,8 +1809,15 @@ select.form-control {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .toast-notice {
@@ -1834,14 +1878,37 @@ select.form-control {
   transform: translate(0, 0) scale(1);
 }
 
-.delay-1 { transition-delay: 0.15s; }
-.delay-2 { transition-delay: 0.30s; }
-.delay-3 { transition-delay: 0.45s; }
-.delay-4 { transition-delay: 0.60s; }
-.delay-5 { transition-delay: 0.75s; }
-.delay-6 { transition-delay: 0.90s; }
-.delay-7 { transition-delay: 1.05s; }
-.delay-8 { transition-delay: 1.20s; }
+.delay-1 {
+  transition-delay: 0.15s;
+}
+
+.delay-2 {
+  transition-delay: 0.30s;
+}
+
+.delay-3 {
+  transition-delay: 0.45s;
+}
+
+.delay-4 {
+  transition-delay: 0.60s;
+}
+
+.delay-5 {
+  transition-delay: 0.75s;
+}
+
+.delay-6 {
+  transition-delay: 0.90s;
+}
+
+.delay-7 {
+  transition-delay: 1.05s;
+}
+
+.delay-8 {
+  transition-delay: 1.20s;
+}
 
 .hero-card {
   animation: heroCardIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -1858,9 +1925,11 @@ select.form-control {
 .hero-date-diamonds .diamond-badge:nth-child(1) {
   animation: popDiamondIn 1s 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
+
 .hero-date-diamonds .diamond-badge:nth-child(2) {
   animation: popDiamondIn 1s 0.60s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
+
 .hero-date-diamonds .diamond-badge:nth-child(3) {
   animation: popDiamondIn 1s 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
@@ -1870,6 +1939,7 @@ select.form-control {
     opacity: 0;
     transform: scale(0.96) translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -1881,6 +1951,7 @@ select.form-control {
     opacity: 0;
     transform: translateY(-25px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1892,6 +1963,7 @@ select.form-control {
     opacity: 0;
     transform: scale(0.5);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -1903,6 +1975,7 @@ select.form-control {
     opacity: 0;
     transform: rotate(45deg) scale(0.5);
   }
+
   to {
     opacity: 1;
     transform: rotate(45deg) scale(1);
@@ -1921,19 +1994,23 @@ select.form-control {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent 20%,
-    rgba(255, 255, 255, 0.35) 50%,
-    transparent 80%
-  );
+  background: linear-gradient(60deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 80%);
   transform: rotate(30deg) translateX(-100%);
   animation: shimmer 4s infinite ease-in-out;
 }
 
 @keyframes shimmer {
-  0% { transform: rotate(30deg) translateX(-150%); }
-  40%, 100% { transform: rotate(30deg) translateX(150%); }
+  0% {
+    transform: rotate(30deg) translateX(-150%);
+  }
+
+  40%,
+  100% {
+    transform: rotate(30deg) translateX(150%);
+  }
 }
 
 .song-hy-badge {
@@ -1983,6 +2060,7 @@ select.form-control {
   .save-date-item.tall {
     height: 410px;
   }
+
   .save-date-item.sq1,
   .save-date-item.sq2 {
     height: 198px;
@@ -2012,11 +2090,33 @@ select.form-control {
     border-radius: 14px;
   }
 
-  .g-item-1, .g-col-forever { height: 280px; }
-  .g-col-forever .g-item-2 { height: calc(100% - 50px); min-height: 220px; }
-  .g-item-3, .g-item-4, .g-item-5 { height: 180px; }
-  .g-item-6 { height: 200px; }
-  .g-item-7, .g-item-8 { height: 230px; }
+  .g-item-1,
+  .g-col-forever {
+    height: 280px;
+  }
+
+  .g-col-forever .g-item-2 {
+    height: calc(100% - 50px);
+    min-height: 220px;
+  }
+
+  .g-item-3,
+  .g-item-4,
+  .g-item-5 {
+    height: 180px;
+  }
+
+  .g-item-6 {
+    height: 200px;
+  }
+
+  .g-item-8 {
+    height: 280px;
+  }
+
+  .g-item-7 {
+    height: 520px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -2264,7 +2364,7 @@ select.form-control {
   }
 
   .section-couple {
-    padding: 0 24px 36px;
+    padding: 86px 24px 36px 24px;
   }
 
   .couple-columns-wrap {
@@ -2363,11 +2463,34 @@ select.form-control {
     font-size: 1.08rem;
   }
 
-  .g-item-1, .g-col-forever { height: 350px; }
-  .g-col-forever .gallery-tag-text { font-size: 3.2rem; }
-  .g-item-3, .g-item-4, .g-item-5 { height: 220px; }
-  .g-item-6 { height: 250px; }
-  .g-item-7, .g-item-8 { height: 280px; }
+  .g-item-1,
+  .g-col-forever {
+    height: 350px;
+  }
+
+  .g-col-forever .gallery-tag-text {
+    font-size: 3.2rem;
+  }
+
+  .g-item-3,
+  .g-item-4,
+  .g-item-5 {
+    height: 220px;
+  }
+
+  .g-item-6 {
+    height: 250px;
+  }
+
+  .g-item-8 {
+    height: 280px;
+
+  }
+
+  .g-item-7 {
+    height: 520px;
+  }
+
 
   .section-rsvp {
     margin: 18px 24px 40px;
@@ -2415,15 +2538,18 @@ select.form-control {
   .save-date-item.tall-left {
     height: 510px;
   }
+
   .save-date-item.sq1,
   .save-date-item.sq2,
   .save-date-item.sq3,
   .save-date-item.sq4 {
     height: 248px;
   }
+
   .save-date-item.wide {
     height: 260px;
   }
+
   .save-date-item.duo1,
   .save-date-item.duo2 {
     height: 270px;
@@ -2437,16 +2563,50 @@ select.form-control {
     top: 470px;
   }
 
-  .g-item-1, .g-col-forever { height: 390px; }
-  .g-col-forever .gallery-tag-text { font-size: 3.5rem; }
-  .g-col-forever .g-item-2 { height: calc(100% - 60px); min-height: 310px; }
-  .g-item-3, .g-item-4, .g-item-5 { height: 250px; }
-  .g-item-6 { height: 280px; }
-  .g-item-7, .g-item-8 { height: 310px; }
-  .g-item-9, .g-item-10 { height: 300px; }
+  .g-item-1,
+  .g-col-forever {
+    height: 390px;
+  }
 
-  .story-card { height: 500px; }
-  .thank-you-card { height: 580px; }
+  .g-col-forever .gallery-tag-text {
+    font-size: 3.5rem;
+  }
+
+  .g-col-forever .g-item-2 {
+    height: calc(100% - 60px);
+    min-height: 310px;
+  }
+
+  .g-item-3,
+  .g-item-4,
+  .g-item-5 {
+    height: 250px;
+  }
+
+  .g-item-6 {
+    height: 280px;
+  }
+
+  .g-item-8 {
+    height: 280px;
+  }
+
+  .g-item-7 {
+    height: 6260px;
+  }
+
+  .g-item-9,
+  .g-item-10 {
+    height: 300px;
+  }
+
+  .story-card {
+    height: 500px;
+  }
+
+  .thank-you-card {
+    height: 580px;
+  }
 }
 
 #sakura-canvas {

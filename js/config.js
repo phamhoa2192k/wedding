@@ -30,21 +30,21 @@ const WEDDING_CONFIG = {
 
   venueBride: {
     name: 'TƯ GIA NHÀ GÁI',
-    address: 'Xã Kiến Xương - Tỉnh Hưng Yên',
+    address: 'Thôn Trà Hương - Xã Kiến Xương - Tỉnh Hưng Yên',
     time: '17:00 | THỨ BẢY | 28.11.2026',
     mapUrl: 'https://maps.app.goo.gl/CfB3AjW6Ad3YDYFQ8'
   },
 
   venueGroom: {
     name: 'TƯ GIA NHÀ TRAI',
-    address: 'Xã Bình Thanh - Tỉnh Hưng Yên',
+    address: 'Thôn Quang Hưng - Xã Bình Thanh - Tỉnh Hưng Yên',
     time: '17:00 | THỨ BẢY | 28.11.2026',
     mapUrl: 'https://maps.app.goo.gl/v3dikxQMnXr4cf4JA'
   },
 
   venue: {
     name: 'TẠI TƯ GIA NHÀ TRAI',
-    address: 'Xã Bình Thanh - Tỉnh Hưng Yên',
+    address: 'Thôn Quang Hưng - Xã Bình Thanh - Tỉnh Hưng Yên',
     mapUrl: 'https://maps.app.goo.gl/v3dikxQMnXr4cf4JA'
   },
 
@@ -73,13 +73,15 @@ const WEDDING_CONFIG = {
     thankYou: 'assets/root_images/DRN00563.JPG',
     gallery: [
       'assets/root_images/HNH00913.JPG',
-      'assets/root_images/HNH03352.JPG',
-      'assets/root_images/HNH00037.JPG',
       'assets/root_images/HNH00317.JPG',
+      'assets/root_images/HNH00037.JPG',
+      'assets/root_images/HNH00222.JPG',
       'assets/root_images/HNH00425.JPG',
       'assets/root_images/HNH03619.JPG',
-      'assets/root_images/HNH01074.JPG',
-      'assets/root_images/HNH00291.JPG',
+
+      'assets/root_images/HNH03428.jpg',
+
+      'assets/root_images/HNH03545.jpg',
       'assets/root_images/HNH00152.JPG',
       'assets/root_images/HNH00222.JPG'
     ]
