@@ -1317,8 +1317,19 @@ body::before {
   height: 150px;
 }
 
-.g-item-4>img {
-  transform: scale(2) translateY(-20px) translateX(-5px);
+.g-item-4>img,
+#gallery-img-4 {
+  object-position: 58% 95% !important;
+  transform-origin: 65% 55%;
+  transform: scale(2);
+}
+
+.gallery-item.g-item-4:hover img,
+.g-item-4:hover>img,
+#gallery-img-4:hover {
+  object-position: 58% 95% !important;
+  transform-origin: 65% 55%;
+  transform: scale(2.1);
 }
 
 .g-item-5 {
