@@ -21,7 +21,7 @@ const WEDDING_CONFIG = {
 
   weddingDate: '2026-11-29T14:00:00',
   dateDisplay: {
-    day: '28',
+    day: '29',
     month: '11',
     year: '2026',
     shortYear: '26',
@@ -57,15 +57,15 @@ const WEDDING_CONFIG = {
 
   images: {
     hero: 'assets/root_images/HNH03015.jpg',
-    saveDate1: 'assets/root_images/HNH03393.JPG',
-    saveDate2: 'assets/root_images/HNH03781.JPG',
-    saveDate3: 'assets/root_images/DRN00773.jpg',
-    saveDate4: 'assets/root_images/HNH02448.JPG',
-    saveDate5: 'assets/root_images/HNH02441.JPG',
-    saveDate6: 'assets/root_images/HNH02772.JPG',
-    saveDate7: 'assets/root_images/HNH03834.JPG',
-    saveDate8: 'assets/root_images/HNH02755.JPG',
-    saveDate9: 'assets/root_images/HNH02915.JPG',
+    saveDate6: 'assets/root_images/HNH02786.jpg',
+    saveDate1: 'assets/root_images/HNH03428.jpg',
+    saveDate2: 'assets/root_images/HNH03545.jpg',
+    saveDate3: 'assets/root_images/HNH03675.jpg',
+    saveDate4: 'assets/root_images/DRN00570.jpg',
+    saveDate5: 'assets/root_images/DRN00773.jpg',
+    saveDate7: 'assets/root_images/HNH02590.jpg',
+    saveDate8: 'assets/root_images/HNH02718.jpg',
+    // saveDate9: 'assets/root_images/HNH02915.JPG',
     coupleGroom: 'assets/root_images/HNH00660.JPG',
     coupleBride: 'assets/root_images/HNH00660.JPG',
     storyBanner: 'assets/root_images/HNH03680.JPG',
@@ -75,14 +75,12 @@ const WEDDING_CONFIG = {
       'assets/root_images/HNH00317.JPG',
       'assets/root_images/HNH00037.JPG',
       'assets/root_images/HNH00222.JPG',
-      'assets/root_images/HNH00425.JPG',
-      'assets/root_images/HNH03619.JPG',
-
-      'assets/root_images/HNH03428.jpg',
-
-      'assets/root_images/HNH03545.jpg',
-      'assets/root_images/HNH03792.jpg',
-      'assets/root_images/HNH02590.jpg'
+      'assets/root_images/HNH00013.JPG',
+      // 'assets/root_images/HNH03619.JPG',
+      // 'assets/root_images/HNH03428.jpg',
+      // 'assets/root_images/HNH03545.jpg',
+      // 'assets/root_images/HNH03792.jpg',
+      // 'assets/root_images/HNH02590.jpg'
     ]
   },
 

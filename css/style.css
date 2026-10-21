@@ -475,7 +475,7 @@ body::before {
 .std-word {
   display: block;
   color: var(--text-script);
-  line-height: 1.05;
+  line-height: 0.5;
 }
 
 .word-save {
@@ -2659,4 +2659,28 @@ select.form-control {
   user-select: none;
   -webkit-user-select: none;
   overflow: hidden;
+}
+
+.save-date-item img.pos-bottom,
+#save-date-img-6,
+#save-date-img-1,
+#save-date-img-3 {
+  object-position: bottom !important;
+}
+
+.save-date-item img.pos-top,
+#save-date-img-5 {
+  object-position: top !important;
+}
+/* 
+#save-date-img-3 {
+  transform: translateY(40px);
+  overflow-y: visible;
+
+} */
+
+#save-date-img-7 {
+  transform: translateX(-40px);
+  overflow-x: visible;
+
 }

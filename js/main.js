@@ -348,6 +348,17 @@ function initSaveDateCarousel() {
   const makeClone = slide => {
     const clone = slide.cloneNode(true);
     clone.setAttribute('aria-hidden', 'true');
+    const origImgs = slide.querySelectorAll('img');
+    const cloneImgs = clone.querySelectorAll('img');
+    origImgs.forEach((origImg, idx) => {
+      const cloneImg = cloneImgs[idx];
+      if (cloneImg) {
+        const compPos = window.getComputedStyle(origImg).objectPosition;
+        if (compPos && compPos !== '50% 50%') {
+          cloneImg.style.objectPosition = compPos;
+        }
+      }
+    });
     clone.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
     clone.querySelectorAll('img').forEach(img => img.removeAttribute('loading'));
     return clone;
