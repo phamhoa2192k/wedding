@@ -2682,5 +2682,112 @@ select.form-control {
 #save-date-img-7 {
   transform: translateX(-40px);
   overflow-x: visible;
+}
 
+/* ==========================================================================
+   BRIDE SIDE OVERRIDES ([data-side="bride"])
+   ========================================================================== */
+
+/* 1. Hero Section: Đảo thứ tự tên thành "Khánh Huyền & Đức Hoà" */
+[data-side="bride"] .hero-bottom-names .name-bride {
+  order: 1;
+}
+
+[data-side="bride"] .hero-bottom-names .name-ampersand {
+  order: 2;
+}
+
+[data-side="bride"] .hero-bottom-names .name-groom {
+  order: 3;
+}
+
+/* 2. Section Couple ("Wedding of"):
+   - Đảo vị trí 2 cột: Cô dâu (.col-bride) sang trái (order: 1), Chú rể (.col-groom) sang phải (order: 2)
+   - Lật ngang (flip) cả 2 ảnh
+   - Đảo căn lề và vị trí thanh ghim (.pillar-line-pin) theo đúng cột trái/phải */
+[data-side="bride"] .couple-col-box.col-bride {
+  order: 1;
+  margin-top: 0;
+}
+
+[data-side="bride"] .couple-col-box.col-groom {
+  order: 2;
+  margin-top: -6px;
+}
+
+[data-side="bride"] .couple-photo-box img {
+  transform: scaleX(-1);
+}
+
+[data-side="bride"] .couple-photo-box:hover img {
+  transform: scaleX(-1) scale(1.04);
+}
+
+/* Cột trái ở thiệp nhà gái (Cô dâu): căn trái, thanh pin nằm bên trái */
+[data-side="bride"] .couple-info-block.bride-side {
+  text-align: left;
+}
+
+[data-side="bride"] .family-pillar.bride-pillar {
+  justify-content: flex-start;
+}
+
+[data-side="bride"] .family-pillar.bride-pillar .pillar-line-pin {
+  order: -1;
+}
+
+[data-side="bride"] .family-pillar.bride-pillar .pillar-content {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Cột phải ở thiệp nhà gái (Chú rể): căn phải, thanh pin nằm bên phải */
+[data-side="bride"] .couple-info-block.groom-side {
+  text-align: right;
+}
+
+[data-side="bride"] .family-pillar.groom-pillar {
+  justify-content: flex-end;
+}
+
+[data-side="bride"] .family-pillar.groom-pillar .pillar-line-pin {
+  order: 2;
+}
+
+[data-side="bride"] .family-pillar.groom-pillar .pillar-content {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* 3. Section Invitation: Đảo cột NHÀ GÁI sang trái, NHÀ TRAI sang phải */
+[data-side="bride"] .invitation-venues-grid .venue-col-bride {
+  order: 1;
+}
+
+[data-side="bride"] .invitation-venues-grid .invitation-venue-divider {
+  order: 2;
+}
+
+[data-side="bride"] .invitation-venues-grid .venue-col-groom {
+  order: 3;
+}
+
+@media (min-width: 768px) {
+  [data-side="bride"] .couple-col-box.col-bride {
+    margin-top: 0;
+  }
+
+  [data-side="bride"] .couple-col-box.col-groom {
+    margin-top: -8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  [data-side="bride"] .couple-col-box.col-bride {
+    margin-top: 0;
+  }
+
+  [data-side="bride"] .couple-col-box.col-groom {
+    margin-top: -10px;
+  }
 }

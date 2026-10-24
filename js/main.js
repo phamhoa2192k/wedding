@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initDynamicConfig();
+  initWeddingSide();
   initCountdown();
   initMusicPlayer();
   initGalleryLightbox();
@@ -13,6 +14,79 @@ document.addEventListener('DOMContentLoaded', () => {
     initSakuraEffect();
   }
 });
+
+function getWeddingSide() {
+  if (window.__WEDDING_SIDE === 'bride') return 'bride';
+
+  const path = window.location.pathname.toLowerCase();
+  const searchParams = new URLSearchParams(window.location.search);
+  const hash = window.location.hash.toLowerCase();
+
+  const pathSegments = path.split('/').filter(Boolean);
+  const lastSegment = pathSegments[pathSegments.length - 1] || '';
+
+  if (
+    lastSegment === 'bride' ||
+    lastSegment === 'bride.html' ||
+    path.includes('/bride/') ||
+    searchParams.has('bride') ||
+    (searchParams.get('side') && searchParams.get('side').toLowerCase() === 'bride') ||
+    hash === '#bride' ||
+    hash === '#/bride'
+  ) {
+    return 'bride';
+  }
+
+  return 'groom';
+}
+
+function initWeddingSide() {
+  const side = getWeddingSide();
+  document.documentElement.setAttribute('data-side', side);
+
+  const cfg = typeof WEDDING_CONFIG !== 'undefined' ? WEDDING_CONFIG : {};
+  const groomName = (cfg.groom && cfg.groom.name) ? cfg.groom.name : 'Đức Hoà';
+  const brideName = (cfg.bride && cfg.bride.name) ? cfg.bride.name : 'Khánh Huyền';
+
+  const thankYouCouple = document.getElementById('thank-you-couple');
+
+  if (side === 'bride') {
+    document.title = `Thiệp Cưới | ${brideName} & ${groomName}`;
+
+    if (thankYouCouple) {
+      thankYouCouple.textContent = `${brideName.toUpperCase()} & ${groomName.toUpperCase()}`;
+    }
+
+    const colGroom = document.querySelector('#couple .col-groom');
+    const colBride = document.querySelector('#couple .col-bride');
+    const coupleHeading = document.querySelector('#couple .couple-heading');
+
+    if (colGroom && colBride && coupleHeading) {
+      colGroom.insertBefore(coupleHeading, colGroom.firstChild);
+
+      colBride.classList.remove('reveal-right', 'delay-2');
+      colBride.classList.add('reveal-left', 'delay-1');
+
+      colGroom.classList.remove('reveal-left', 'delay-1');
+      colGroom.classList.add('reveal-right', 'delay-2');
+    }
+
+    const venueGroom = document.querySelector('#invitation .venue-col-groom');
+    const venueBride = document.querySelector('#invitation .venue-col-bride');
+    if (venueGroom && venueBride) {
+      venueBride.classList.remove('reveal-right');
+      venueBride.classList.add('reveal-left');
+
+      venueGroom.classList.remove('reveal-left');
+      venueGroom.classList.add('reveal-right');
+    }
+  } else {
+    document.title = `Thiệp Cưới | ${groomName} & ${brideName}`;
+    if (thankYouCouple) {
+      thankYouCouple.textContent = `${groomName.toUpperCase()} & ${brideName.toUpperCase()}`;
+    }
+  }
+}
 
 function initDynamicConfig() {
   if (typeof WEDDING_CONFIG === 'undefined') return;

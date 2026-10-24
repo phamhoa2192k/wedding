@@ -70,7 +70,9 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  let filePath = path.join(ROOT, decodeURIComponent(urlPath === '/' ? '/index.html' : urlPath));
+  const cleanRoute = urlPath.replace(/\/+$/, '');
+  const targetUrlPath = (cleanRoute === '' || cleanRoute === '/bride') ? '/index.html' : urlPath;
+  let filePath = path.join(ROOT, decodeURIComponent(targetUrlPath));
 
   if (!filePath.startsWith(ROOT)) {
     res.writeHead(403);

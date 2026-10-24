@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="green" data-side="bride">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Thiệp Cưới | Khánh Huyền & Đức Hoà</title>
+  <meta name="description" content="Thiệp cưới điện tử của Khánh Huyền & Đức Hoà - 29.11.2026">
+  <meta property="og:title" content="Thiệp Cưới | Khánh Huyền & Đức Hoà">
+  <meta property="og:description" content="Trân trọng kính mời quý khách đến chung vui cùng gia đình chúng tôi!">
+  <meta property="og:image" content="../assets/root_images/HNH03675.jpg">
+  <meta property="og:type" content="website">
+  <script>
+    window.__WEDDING_SIDE = 'bride';
+    (async function () {
+      try {
+        const res = await fetch('../index.html');
+        let html = await res.text();
+        html = html.replace('<head>', '<head><base href="../">');
+        document.open();
+        document.write(html);
+        document.close();
+      } catch (e) {
+        window.location.replace('../?bride');
+      }
+    })();
+  </script>
+</head>
+<body></body>
+</html>
