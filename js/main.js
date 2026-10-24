@@ -16,25 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function getWeddingSide() {
-  if (window.__WEDDING_SIDE === 'bride') return 'bride';
+  if (window.__WEDDING_SIDE) return window.__WEDDING_SIDE;
 
   const path = window.location.pathname.toLowerCase();
-  const searchParams = new URLSearchParams(window.location.search);
-  const hash = window.location.hash.toLowerCase();
-
   const pathSegments = path.split('/').filter(Boolean);
   const lastSegment = pathSegments[pathSegments.length - 1] || '';
 
-  if (
-    lastSegment === 'bride' ||
-    lastSegment === 'bride.html' ||
-    path.includes('/bride/') ||
-    searchParams.has('bride') ||
-    (searchParams.get('side') && searchParams.get('side').toLowerCase() === 'bride') ||
-    hash === '#bride' ||
-    hash === '#/bride'
-  ) {
+  if (lastSegment === 'bride' || lastSegment === 'bride.html' || path.includes('/bride/')) {
     return 'bride';
+  }
+  if (lastSegment === 'groom' || lastSegment === 'groom.html' || path.includes('/groom/')) {
+    return 'groom';
   }
 
   return 'groom';

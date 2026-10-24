@@ -71,7 +71,7 @@ const server = http.createServer((req, res) => {
   }
 
   const cleanRoute = urlPath.replace(/\/+$/, '');
-  const targetUrlPath = (cleanRoute === '' || cleanRoute === '/bride') ? '/index.html' : urlPath;
+  const targetUrlPath = (cleanRoute === '' || cleanRoute === '/bride' || cleanRoute === '/groom') ? '/index.html' : urlPath;
   let filePath = path.join(ROOT, decodeURIComponent(targetUrlPath));
 
   if (!filePath.startsWith(ROOT)) {

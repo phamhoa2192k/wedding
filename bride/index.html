@@ -15,12 +15,12 @@
       try {
         const res = await fetch('../index.html');
         let html = await res.text();
-        html = html.replace('<head>', '<head><base href="../">');
+        html = html.replace('<head>', '<head><base href="../"><script>window.__WEDDING_SIDE="bride";<\/script>');
         document.open();
         document.write(html);
         document.close();
       } catch (e) {
-        window.location.replace('../?bride');
+        console.error('Không thể tải trang thiệp cưới:', e);
       }
     })();
   </script>
