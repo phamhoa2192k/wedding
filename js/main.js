@@ -91,6 +91,11 @@ function initDynamicConfig() {
     if (cfg.venueBride) cfg.venueBride.time = sundayDateText;
     if (cfg.venueGroom) cfg.venueGroom.time = sundayDateText;
     if (cfg.venue) cfg.venue.time = sundayDateText;
+    if (cfg.timeline) {
+        cfg.timeline[0].time = "9:00";
+        cfg.timeline[1].time = "9:30";
+        cfg.timeline[2].time = "12:00";
+    }
   }
 
   if (cfg.groom) {
