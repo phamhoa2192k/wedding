@@ -1208,32 +1208,25 @@ body::before {
   position: relative;
   padding: 32px 18px 24px;
   border-radius: 28px;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-soft);
   overflow: hidden;
-  color: #ffffff;
-  background-color: var(--bg-card-alt);
+  color: var(--text-main);
+  background-color: #fbf9f4;
   background-image:
-    linear-gradient(140deg,
-      rgba(15, 25, 18, 0.72) 0%,
-      rgba(15, 25, 18, 0.48) 45%,
-      rgba(15, 25, 18, 0.75) 100%),
-    url('../assets/root_images/DRN00690.JPG');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    radial-gradient(ellipse at 0% 0%, var(--primary-subtle), transparent 65%);
 }
 
 .gallery-heading {
   font-size: 2.9rem;
-  color: #ffffff;
+  color: var(--text-script);
   margin-bottom: 12px;
 }
 
 .gallery-quote {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 0.95rem;
+  font-family: 'Playwrite CU', Georgia, serif;
+  font-size: 0.75rem;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 28px;
 }
@@ -1260,7 +1253,7 @@ body::before {
 .g-col-always .gallery-tag-text {
   font-family: 'Alex Brush', 'Great Vibes', cursive;
   font-size: 2.5rem;
-  color: #ffffff;
+  color: var(--text-script);
   line-height: 1;
   text-align: right;
   margin-bottom: 6px;

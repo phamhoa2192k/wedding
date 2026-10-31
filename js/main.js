@@ -85,6 +85,14 @@ function initDynamicConfig() {
 
   const cfg = WEDDING_CONFIG;
 
+  if (new URLSearchParams(window.location.search).get('day') === 'sunday') {
+    const sundayDateText = '9:30 | CHỦ NHẬT | 29.11.2026';
+    if (cfg.dateDisplay) cfg.dateDisplay.fullDateText = sundayDateText;
+    if (cfg.venueBride) cfg.venueBride.time = sundayDateText;
+    if (cfg.venueGroom) cfg.venueGroom.time = sundayDateText;
+    if (cfg.venue) cfg.venue.time = sundayDateText;
+  }
+
   if (cfg.groom) {
     const heroGroom = document.getElementById('hero-groom-name');
     if (heroGroom && cfg.groom.name) {

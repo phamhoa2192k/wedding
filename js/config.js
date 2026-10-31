@@ -65,7 +65,6 @@ const WEDDING_CONFIG = {
     saveDate5: 'assets/root_images/DRN00773.jpg',
     saveDate7: 'assets/root_images/HNH02590.jpg',
     saveDate8: 'assets/root_images/HNH02718.jpg',
-    // saveDate9: 'assets/root_images/HNH02915.JPG',
     coupleGroom: 'assets/root_images/HNH00660.JPG',
     coupleBride: 'assets/root_images/HNH00660.JPG',
     storyBanner: 'assets/root_images/HNH03680.JPG',
@@ -76,11 +75,6 @@ const WEDDING_CONFIG = {
       'assets/root_images/HNH00037.JPG',
       'assets/root_images/HNH00222.JPG',
       'assets/root_images/HNH00013.JPG',
-      // 'assets/root_images/HNH03619.JPG',
-      // 'assets/root_images/HNH03428.jpg',
-      // 'assets/root_images/HNH03545.jpg',
-      // 'assets/root_images/HNH03792.jpg',
-      // 'assets/root_images/HNH02590.jpg'
     ]
   },
 
