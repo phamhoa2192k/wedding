@@ -483,13 +483,13 @@ body::before {
 }
 
 .word-save {
-  font-size: clamp(2rem, 8vw, 2.8rem);
+  font-size: clamp(2.45rem, 10vw, 3.2rem);
   margin-left: 0;
 }
 
 .word-date {
-  font-size: clamp(2rem, 8vw, 2.8rem);
-  margin-left: clamp(24px, 12vw, 56px);
+  font-size: clamp(2.45rem, 10vw, 3.2rem);
+  margin-left: clamp(20px, 10vw, 56px);
   line-height: 1.3;
 }
 
@@ -1559,16 +1559,17 @@ select.form-control {
 .thank-you-card {
   position: relative;
   border-radius: 28px;
-  height: 440px;
+  height: 550px;
   overflow: hidden;
   box-shadow: var(--shadow-card);
+  background-color: #0f1912;
 }
 
 .thank-you-img {
   width: 100%;
-  height: 100%;
+  height: 86%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center top;
   display: block;
   transition: transform 0.6s ease;
 }
@@ -1581,9 +1582,11 @@ select.form-control {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0.35) 45%,
-      rgba(15, 25, 18, 0.85) 100%);
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.22) 45%,
+      rgba(15, 25, 18, 0.85) 75%,
+      #0f1912 86%,
+      #0f1912 100%);
   pointer-events: none;
 }
 
@@ -1595,37 +1598,39 @@ select.form-control {
   justify-content: flex-end;
   align-items: center;
   text-align: center;
-  padding: 32px 20px;
+  padding: 24px 16px;
   color: #ffffff;
   z-index: 2;
 }
 
 .thank-you-title {
   font-family: 'Alex Brush', 'Great Vibes', cursive;
-  font-size: 3.4rem;
+  font-size: clamp(2.3rem, 7.5vw, 3rem);
   color: #e5c07b;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .thank-you-quote {
   font-family: 'Playwrite CU';
-  font-size: 0.8rem;
+  font-size: clamp(0.62rem, 2.2vw, 0.7rem);
   letter-spacing: 0.02rem;
-  word-spacing: 0.1rem;
-  line-height: 1.8;
+  word-spacing: 0.08rem;
+  line-height: 1.55;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 16px;
-  max-width: 80%;
+  margin-bottom: 10px;
+  max-width: 90%;
 }
 
 .thank-you-couple {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.3rem;
+  font-size: clamp(0.95rem, 3.8vw, 1.15rem);
   font-weight: 800;
   letter-spacing: 2px;
   color: #ffffff;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
+  white-space: nowrap;
 }
 
 .thank-you-badge {
@@ -2319,11 +2324,11 @@ select.form-control {
   }
 
   .word-save {
-    font-size: 3.4rem;
+    font-size: 3.8rem;
   }
 
   .word-date {
-    font-size: 3.4rem;
+    font-size: 3.8rem;
     margin-left: 96px;
   }
 
