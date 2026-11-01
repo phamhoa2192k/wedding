@@ -254,7 +254,7 @@ body::before {
 
 .hero-bottom-names {
 
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 7.2vw, 2.5rem);
   font-weight: 400;
   color: #ffffff;
   letter-spacing: 0.5px;
@@ -264,7 +264,8 @@ body::before {
   display: flex;
   align-items: last baseline;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   column-gap: 8px;
 }
 
@@ -272,12 +273,12 @@ body::before {
 .hero-bottom-names .name-bride {
   font-family: inherit;
   white-space: nowrap;
-  letter-spacing: 0.2rem;
+  letter-spacing: clamp(0.06rem, 0.5vw, 0.2rem);
 }
 
 .hero-bottom-names .name-ampersand {
   font-family: inherit;
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 4.5vw, 1.6rem);
   color: white;
   font-weight: 400;
   line-height: 1;
@@ -298,11 +299,12 @@ body::before {
 }
 
 .hero-bottom-date .date-text {
-  font-size: 2.1rem;
+  font-size: clamp(1.4rem, 6vw, 2.1rem);
   font-weight: 600;
   letter-spacing: 3px;
   color: #fbf9f4;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
 }
 
 @keyframes heroBottomFadeUp {
@@ -404,9 +406,10 @@ body::before {
 }
 
 .countdown-title {
-  font-size: 2.6rem;
+  font-size: clamp(1.75rem, 7.6vw, 2.6rem);
   margin-bottom: 16px;
   color: var(--text-script);
+  white-space: nowrap;
 }
 
 .countdown-timer {
@@ -476,16 +479,17 @@ body::before {
   display: block;
   color: var(--text-script);
   line-height: 0.5;
+  white-space: nowrap;
 }
 
 .word-save {
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 8vw, 2.8rem);
   margin-left: 0;
 }
 
 .word-date {
-  font-size: 2.8rem;
-  margin-left: 56px;
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  margin-left: clamp(24px, 12vw, 56px);
   line-height: 1.3;
 }
 
@@ -909,10 +913,11 @@ body::before {
 
 .invitation-salute {
 
-  font-size: 2.8rem;
+  font-size: clamp(1.55rem, 7.2vw, 2.8rem);
   color: var(--text-script);
   margin-bottom: 18px;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .song-hy-badge.small {
@@ -947,12 +952,13 @@ body::before {
 
 .couple-heading {
   font-family: 'Alex Brush', 'Great Vibes', cursive;
-  font-size: 2.5rem;
+  font-size: clamp(1.7rem, 8.5vw, 2.5rem);
   color: var(--text-script);
   text-align: right;
   margin-bottom: 4px;
   line-height: 1;
   padding-right: 4px;
+  white-space: nowrap;
 }
 
 .couple-photo-box {
@@ -989,13 +995,14 @@ body::before {
 }
 
 .couple-person-name {
-  font-size: 1.4rem;
+  font-size: clamp(1.05rem, 4.5vw, 1.4rem);
   font-weight: 700;
   letter-spacing: 1.5px;
   color: var(--text-heading);
   text-transform: uppercase;
   margin-bottom: 8px;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .family-pillar {
@@ -1217,9 +1224,10 @@ body::before {
 }
 
 .gallery-heading {
-  font-size: 2.9rem;
+  font-size: clamp(2.1rem, 8.5vw, 2.9rem);
   color: var(--text-script);
   margin-bottom: 12px;
+  white-space: nowrap;
 }
 
 .gallery-quote {
@@ -1252,12 +1260,13 @@ body::before {
 .g-col-forever .gallery-tag-text,
 .g-col-always .gallery-tag-text {
   font-family: 'Alex Brush', 'Great Vibes', cursive;
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 7.5vw, 2.5rem);
   color: var(--text-script);
   line-height: 1;
   text-align: right;
   margin-bottom: 6px;
   padding-right: 2px;
+  white-space: nowrap;
 }
 
 .g-col-forever .g-item-2,
