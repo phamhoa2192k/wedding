@@ -1,19 +1,60 @@
-document.addEventListener('DOMContentLoaded', () => {
+function waitForStylesheets() {
+  const links = Array.from(document.querySelectorAll('link[rel="stylesheet"]'));
+  return Promise.all(
+    links.map(link => {
+      if (link.sheet) return Promise.resolve();
+      return new Promise(resolve => {
+        link.addEventListener('load', resolve, { once: true });
+        link.addEventListener('error', resolve, { once: true });
+      });
+    })
+  );
+}
+
+async function waitForStylesAndFonts() {
+  const timeout = new Promise(resolve => setTimeout(resolve, 3500));
+  const loadTask = (async () => {
+    await waitForStylesheets();
+    if (document.fonts) {
+      await Promise.allSettled([
+        document.fonts.load('400 1em "Cach Dieu"'),
+        document.fonts.load('400 1em "Alex Brush"'),
+        document.fonts.load('400 1em "Montserrat"'),
+        document.fonts.load('600 1em "Montserrat"'),
+        document.fonts.load('400 1em "Playwrite CU"'),
+        document.fonts.ready
+      ]);
+    }
+  })();
+  await Promise.race([loadTask, timeout]);
+}
+
+async function bootWeddingApp() {
   initTheme();
   initDynamicConfig();
   initWeddingSide();
   initCountdown();
   initMusicPlayer();
   initGalleryLightbox();
-  initSaveDateCarousel();
   initRSVPForm();
   initGiftModal();
   initThemeSwitcher();
+
+  await waitForStylesAndFonts();
+  document.documentElement.classList.add('app-ready');
+
+  initSaveDateCarousel();
   initScrollAnimations();
   if (typeof initSakuraEffect === 'function') {
     initSakuraEffect();
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootWeddingApp, { once: true });
+} else {
+  bootWeddingApp();
+}
 
 function getWeddingSide() {
   if (window.__WEDDING_SIDE) return window.__WEDDING_SIDE;
