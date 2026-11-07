@@ -84,6 +84,9 @@ function initWeddingSide() {
   const thankYouCouple = document.getElementById('thank-you-couple');
 
   if (side === 'bride') {
+    const giftSection = document.getElementById('gift-section');
+    if (giftSection) giftSection.style.display = 'none';
+
     document.title = `Thiệp Cưới | ${brideName} & ${groomName}`;
 
     if (thankYouCouple) {
